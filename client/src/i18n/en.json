@@ -1,4 +1,8 @@
 {
+    "home": "Home",
+    "about": "About",
+    "project": "Projects",
+    "blog": "Blog",
     "homeTitle": "Daehan Lee",
     "homeSubTitle": "Independent Web Developer based in South Korea",
     "langKr": "한국어",
@@ -10,7 +14,6 @@
     "portfolioBackFeatureOne": "Firebase - store blog posts data",
     "portfolioBackFeatureTwo": "AWS ECR - Python crawler Docker Image",
     "portfolioBackFeatureThree": "AWS Lambda with Event Trigger",
-
     "englihAppName": "Learn English App",
     "englihAppDesc": "Search Phrasal verbs and Idioms, save them in my page to study later, play some games with them",
     "englihAppFrontFeatureOne": "NextJS, Redux(Auth state)",
