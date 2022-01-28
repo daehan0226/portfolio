@@ -1,16 +1,18 @@
-import React , {FC}from 'react';
+import React , {FC, useContext}from 'react';
 import {RefProps} from "../../models"
 import {BoxWrapper, BoxHeader} from "../common";
 import Divider from '@mui/material/Divider';
 import ProjectPortfolio from "./ProjectPortfolio";
 import ProjectEnglishApp from './ProjectEnglishApp';
+import { LangContext } from '../../context/lang';
 
 const Project: FC<RefProps>= ({refObject}) => {
+  const { dispatch: { translate }} = useContext(LangContext);
 
   return (
     <div ref={refObject}>
       <BoxWrapper backgroundColor='primary.800' >
-          <BoxHeader title={"Projects"} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
+          <BoxHeader title={translate("project")} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
           <ProjectPortfolio />
           <Divider 
               sx={{
