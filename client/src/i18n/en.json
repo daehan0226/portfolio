@@ -21,10 +21,10 @@
     "englihAppBackFeatureOne": "Python Flask API",
     "englihAppBackFeatureTwo": "MySQL- ORM, MongoDB - phrasal verbs, idioms, user like data, Redis - user session",
     "englihAppCrawlerFeatureOne": "Crawler with aiohttp - crawl phrasal verbs, idioms from English dictionary web sites",    
-    "furfellasName": "Furfellas App",
-    "furfellasDesc": "Fur fellas's webapge",
-    "furfellasFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
-    "furfellasFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
-    "furfellasBackFeatureOne": "Python Flask API",
-    "furfellasBackFeatureTwo": "MySQL- ORM"
+    "furfellasAppName": "Furfellas App",
+    "furfellasAppDesc": "Fur fellas's webapge",
+    "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
+    "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
+    "furfellasAppBackFeatureOne": "Python Flask API",
+    "furfellasAppBackFeatureTwo": "MySQL- ORM"
   }

@@ -21,10 +21,10 @@
     "englihAppBackFeatureOne": "Python Flask API",
     "englihAppBackFeatureTwo": "MySQL- ORM, MongoDB - phrasal verbs, idioms, user like data, Redis - user session",
     "englihAppCrawlerFeatureOne": "Crawler - aiohttp 비동기 http 요청으로 구동사, 이디엄 크롤링",
-    "furfellasName": "펫 앱",
-    "furfellasDesc": "펫 사진 갤러리, 할일, 프로필 등록",
-    "furfellasFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
-    "furfellasFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
-    "furfellasBackFeatureOne": "Python Flask API",
-    "furfellasBackFeatureTwo": "MySQL- ORM"
+    "furfellasAppName": "펫 앱",
+    "furfellasAppDesc": "펫 사진 갤러리, 할일, 프로필 등록",
+    "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
+    "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
+    "furfellasAppBackFeatureOne": "Python Flask API",
+    "furfellasAppBackFeatureTwo": "MySQL- ORM"
   }
