@@ -31,10 +31,10 @@ const Blog = ({refObject}:RefProps) => {
     <div ref={refObject}>
       <BoxWrapper>
           <BoxHeader title={"Blog"} />
-          <>
+          <Box>
             {loading && (<LoadingBox />)}
             {error && (<ErrorAlert msg={error} />)}
-          </>
+          </Box>
           <Box
             sx={{
               display: "grid",
@@ -46,15 +46,13 @@ const Blog = ({refObject}:RefProps) => {
               }
             }}
             >
-            <>
-              {itemsToShow.length && itemsToShow}
-            </>
+            {itemsToShow.length && itemsToShow}
           </Box>
-          <>
+          <Box>
           {itemsToShow.length < data.length && (
             <Button sx={{color:"secondary.300", height: 100}} onClick={showMore}>Show more </Button>
           )}
-          </>
+          </Box>
       </BoxWrapper>
     </div>
   );
