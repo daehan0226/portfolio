@@ -6,3 +6,9 @@ client/coverage
 
 # production
 client/build
+
+
+# lambda
+lambda/venv/*
+lambda/config/credentials.json
+*.pyc
