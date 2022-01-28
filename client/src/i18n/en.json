@@ -20,5 +20,11 @@
     "englihAppFrontFeatureTwo": "MUI - Component, Styled-component,Responsive UI",
     "englihAppBackFeatureOne": "Python Flask API",
     "englihAppBackFeatureTwo": "MySQL- ORM, MongoDB - phrasal verbs, idioms, user like data, Redis - user session",
-    "englihAppCrawlerFeatureOne": "Crawler with aiohttp - crawl phrasal verbs, idioms from English dictionary web sites"
+    "englihAppCrawlerFeatureOne": "Crawler with aiohttp - crawl phrasal verbs, idioms from English dictionary web sites",    
+    "furfellasAppName": "Furfellas App",
+    "furfellasAppDesc": "Fur fellas's webapge",
+    "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
+    "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
+    "furfellasAppBackFeatureOne": "Python Flask API",
+    "furfellasAppBackFeatureTwo": "MySQL- ORM"
   }
