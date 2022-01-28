@@ -1,4 +1,8 @@
 {
+    "home": "홈",
+    "about": "소개",
+    "project": "프로젝트",
+    "blog": "블로그",
     "homeTitle": "이대한",
     "homeSubTitle": "웹 개발자",
     "langKr": "한국어",
