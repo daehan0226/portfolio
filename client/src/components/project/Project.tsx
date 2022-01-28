@@ -1,26 +1,33 @@
-import React from 'react';
+import React , {FC}from 'react';
+import {RefProps} from "../../models"
+import {BoxWrapper, BoxHeader} from "../common";
+import Divider from '@mui/material/Divider';
+import ProjectPortfolio from "./ProjectPortfolio";
+import ProjectEnglishApp from './ProjectEnglishApp';
 
-import {RefProps, IProject} from "../../models"
-import {BoxWrapper, BoxHeader, ErrorAlert, LoadingBox} from "../common";
-
-import useGetDocs from '../../hooks/useGetDocs';
-import ProjectDetail from './ProjectDeatil';
-
-
-const Project = ({refObject}:RefProps ) => {
-  const {data, loading, error} = useGetDocs<IProject>({collectionName:"projects"});
+const Project: FC<RefProps>= ({refObject}) => {
 
   return (
     <div ref={refObject}>
       <BoxWrapper backgroundColor='primary.800' >
           <BoxHeader title={"Projects"} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
-          <>
-            {loading && (<LoadingBox />)}
-            {error && (<ErrorAlert msg={error} />)}
-            {data && data.map(project => (
-                <ProjectDetail key={project.name} project={project}/>
-            ))}
-          </>
+          <ProjectPortfolio />
+          <Divider 
+              sx={{
+                backgroundColor: "primary.50", 
+                borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2}, 
+                width: "60%", 
+                margin: '20px auto'
+              }}/>
+          <ProjectEnglishApp />
+          <Divider 
+              sx={{
+                backgroundColor: "primary.50", 
+                borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2}, 
+                width: "60%", 
+                margin: '20px auto'
+              }}/>
+
       </BoxWrapper>
     </div>
   );
