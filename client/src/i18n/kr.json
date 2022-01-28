@@ -9,5 +9,13 @@
     "portfolioFrontFeatureTwo": "MUI - 컴포넌트 적용, 인라인 스타일링, 색 테마, 반응형 UI - 모바일, 타블릿, 노트북 Breakpoints",
     "portfolioBackFeatureOne": "Firebase - 티스토리 블로그 포스트 저장",
     "portfolioBackFeatureTwo": "AWS ECR - 크롤링 파이썬 스트립트 도커 이미지 푸시",
-    "portfolioBackFeatureThree": "AWS Lambda 트리거 이벤트 추가"
+    "portfolioBackFeatureThree": "AWS Lambda 트리거 이벤트 추가",
+
+    "englihAppName": "영어 학습 앱",
+    "englihAppDesc": "구동사와 이디엄을 검색할 수 있고, 나의 페이지에 저장하고, 게임을 통해 학습",
+    "englihAppFrontFeatureOne": "NextJS, 리덕스(로그인 상태)",
+    "englihAppFrontFeatureTwo": "MUI - Component, Styled-component,Responsive UI",
+    "englihAppBackFeatureOne": "Python Flask API",
+    "englihAppBackFeatureTwo": "MySQL- ORM, MongoDB - phrasal verbs, idioms, user like data, Redis - user session",
+    "englihAppCrawlerFeatureOne": "Crawler - aiohttp 비동기 http 요청으로 구동사, 이디엄 크롤링"
   }

@@ -2,13 +2,10 @@ import React, {FC, useContext} from 'react';
 
 import Box from '@mui/material/Box';
 import { Link } from '@mui/material';
-import Divider from '@mui/material/Divider';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { LangContext } from '../../context/lang';
 
-import ProjectFeatureBox from "./ProjectFeatureBox";
-import ProjectImageBox from "./ProjectImageBox";
-import ProjectHeader from "./ProjectHeader";
+import {ProjectFeatureBox, ProjectImageBox, ProjectHeader} from "./common";
 
 const ProjectPortfolio:FC = () => {
   
@@ -27,6 +24,7 @@ const ProjectPortfolio:FC = () => {
           justifyContent:'center'}} 
       >
         <ProjectImageBox 
+          link={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK}
           src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_PORTFOLIO_IMAGE}`} 
           alt={translate("portfolioName")} 
         />

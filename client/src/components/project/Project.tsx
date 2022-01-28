@@ -3,6 +3,7 @@ import {RefProps} from "../../models"
 import {BoxWrapper, BoxHeader} from "../common";
 import Divider from '@mui/material/Divider';
 import ProjectPortfolio from "./ProjectPortfolio";
+import ProjectEnglishApp from './ProjectEnglishApp';
 
 const Project: FC<RefProps>= ({refObject}) => {
 
@@ -18,6 +19,15 @@ const Project: FC<RefProps>= ({refObject}) => {
                 width: "60%", 
                 margin: '20px auto'
               }}/>
+          <ProjectEnglishApp />
+          <Divider 
+              sx={{
+                backgroundColor: "primary.50", 
+                borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2}, 
+                width: "60%", 
+                margin: '20px auto'
+              }}/>
+
       </BoxWrapper>
     </div>
   );
