@@ -2,5 +2,12 @@
     "homeTitle": "이대한",
     "homeSubTitle": "웹 개발자",
     "langKr": "한국어",
-    "langEn": "English"
+    "langEn": "English",
+    "portfolioName": "포트폴리오",
+    "portfolioDesc": "개인 포트폴리오 프로젝트",
+    "portfolioFrontFeatureOne": "리액트 - 타입스크립트 적용, ContextAPI(언어 선택)",
+    "portfolioFrontFeatureTwo": "MUI - 컴포넌트 적용, 인라인 스타일링, 색 테마, 반응형 UI - 모바일, 타블릿, 노트북 Breakpoints",
+    "portfolioBackFeatureOne": "Firebase - 티스토리 블로그 포스트 저장",
+    "portfolioBackFeatureTwo": "AWS ECR - 크롤링 파이썬 스트립트 도커 이미지 푸시",
+    "portfolioBackFeatureThree": "AWS Lambda 트리거 이벤트 추가"
   }

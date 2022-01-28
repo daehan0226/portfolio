@@ -2,5 +2,12 @@
     "homeTitle": "Daehan Lee",
     "homeSubTitle": "Independent Web Developer based in South Korea",
     "langKr": "한국어",
-    "langEn": "English"
+    "langEn": "English",
+    "portfolioName": "Portfolio",
+    "portfolioDesc": "Portfolio Project",
+    "portfolioFrontFeatureOne": "ReactJS - Typescript, ContextAPI(Language)",
+    "portfolioFrontFeatureTwo": "MUI - Component, Inline Styling, Color Theme, Responsive Breakpoints",
+    "portfolioBackFeatureOne": "Firebase - store blog posts data",
+    "portfolioBackFeatureTwo": "AWS ECR - Python crawler Docker Image",
+    "portfolioBackFeatureThree": "AWS Lambda with Event Trigger"
   }
