@@ -1,14 +1,8 @@
-# dependencies
+# Client # dependencies/production
 client/node_modules
-
-# testing
-client/coverage
-
-# production
-client/build
-
+client/build 
 
 # lambda
-lambda/venv/*
+lambda/venv
 lambda/config/credentials.json
 *.pyc
