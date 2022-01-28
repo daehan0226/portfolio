@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo} from 'react';
+import React, {useState, useMemo} from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
@@ -11,7 +11,7 @@ import useGetDocs from '../../hooks/useGetDocs';
 
 const Blog = ({refObject}:RefProps) => {
   const {data, loading, error} = useGetDocs<IBlog>({collectionName:"tistory_posts", sort:true});
-  const [numberOfitemsShown, setNumberOfItemsToShown] = useState<number>(10);
+  const [numberOfitemsShown, setNumberOfItemsToShown] = useState<number>(5);
 
   const showMore = () => {
     if (numberOfitemsShown + 3 <= data.length) {
