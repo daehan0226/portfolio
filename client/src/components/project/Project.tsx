@@ -4,6 +4,7 @@ import {BoxWrapper, BoxHeader} from "../common";
 import Divider from '@mui/material/Divider';
 import ProjectPortfolio from "./ProjectPortfolio";
 import ProjectEnglishApp from './ProjectEnglishApp';
+import ProjectFurfellasApp from "./ProjectFurfellasApp"
 import { LangContext } from '../../context/lang';
 
 const Project: FC<RefProps>= ({refObject}) => {
@@ -29,7 +30,7 @@ const Project: FC<RefProps>= ({refObject}) => {
                 width: "60%", 
                 margin: '20px auto'
               }}/>
-
+          <ProjectFurfellasApp />
       </BoxWrapper>
     </div>
   );
