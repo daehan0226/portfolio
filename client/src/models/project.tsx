@@ -19,4 +19,9 @@ export default interface IProject {
         features: string[],
     },
 }
+
+export interface IProjectTest {
+    name: string,
+    desc: string
+}
   
