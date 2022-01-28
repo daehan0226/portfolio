@@ -6,14 +6,15 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Box from '@mui/material/Box';
 
 type ProjectImageBoxProps = {
+  link: string;
   src: string;
   alt: string;
 }
 
-const ProjectImageBox: FC<ProjectImageBoxProps> = ({src, alt}) => {
+const ProjectImageBox: FC<ProjectImageBoxProps> = ({link, src, alt}) => {
   return (
     <Box sx={{width: {mobile: 200, tablet: 300}}}>
-      <Link href={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK}>
+      <Link href={link}>
         <ImageListItem>
           <img
             src={src} 
