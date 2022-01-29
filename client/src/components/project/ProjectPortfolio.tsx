@@ -8,7 +8,6 @@ import { LangContext } from '../../context/lang';
 import {ProjectFeatureBox, ProjectImageBox, ProjectHeader} from "./common";
 
 const ProjectPortfolio:FC = () => {
-  
   const { dispatch: { translate }} = useContext(LangContext);
   return (
     <Box>
