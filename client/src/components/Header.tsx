@@ -6,14 +6,16 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 
 import { LangMenu } from './common';
+import { LangContext } from '../context/lang';
 
-const pages = ['Home', 'About', 'Projects', 'Blog'];
+const pages = ['home', 'about', 'project', 'blog'];
 
 interface HeaderProps {
   handleScroll: (target:string) => void
 }
 
 const Header: FC<HeaderProps> = ({handleScroll}) => {
+  const { dispatch: { translate }} = useContext(LangContext);
 
   const handleMenuClick = (page: string) => {
     handleScroll(page)
@@ -43,7 +45,7 @@ const Header: FC<HeaderProps> = ({handleScroll}) => {
                         '&:hover': {
                           color: 'primary.500'
                         }
-                    }} >{page}</Typography>
+                    }} >{translate(page)}</Typography>
                   </MenuItem>
                 ))}
             <LangMenu />
