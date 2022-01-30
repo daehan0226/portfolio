@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -15,16 +15,14 @@ import AboutTimelineDetail from "./AboutTimelineDetail";
 
 export default function AboutTimeline() {  
   const {data, loading, error} = useGetDocs<ITimeLineItem>({collectionName:"timeline", sort:true});
-  
-
   return (
     <Timeline sx={{ padding: 0 }}>
       {loading && (<LoadingBox />)}
       {error && (<ErrorAlert msg={error} />)}
       {data && data.map(item=>(
-        <TimelineItem key={item.title}>
+        <TimelineItem key={item.title.KR}>
           <TimelineOppositeContent
-            sx={{ m: 'auto 0', padding: '8px 8px',}}
+            sx={{ m: 'auto 0', padding: '8px 8px'}}
             align="right"
             variant="body2"
             color="text.secondary"
