@@ -2,7 +2,7 @@
 
 <div style="display: flex; align-items: center; justify-content: center;">
     <a href="https://daehan0226.github.io/portfolio/">
-        <img src="./client/build/images/project_portfolio_1.png" alt="portfolio" width="200"/>
+        <img src="https://github.com/daehan0226/portfolio/blob/main/client/public/images/project_portfolio_1.png" alt="portfolio" width="200"/>
     </a>
 </div>
 
