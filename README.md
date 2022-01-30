@@ -1,4 +1,10 @@
-# Portfolio
+# [Portfolio](https://daehan0226.github.io/portfolio/)
+
+<div style="display: flex; align-items: center; justify-content: center;">
+    <a href="https://daehan0226.github.io/portfolio/">
+        <img src="client/build/images/project_portfolio_1.png" alt="drawing" width="200"/>
+    </a>
+</div>
 
 ## Client
 * ReactJS + Typescript + MUI + ContextAPI
