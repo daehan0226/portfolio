@@ -1,13 +1,13 @@
 export interface ITimeLineItemDeatail {
     title: {
-        [key: string]: string
+        [lang: string]: string
     },
     detail: {
         project: {
-            [key: string]: string
+            [lang: string]: string
         },
         tasks: {
-            [key: string]: string
+            [lang: string]: string
         }[]
     }[]
 }
