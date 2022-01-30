@@ -1,5 +1,5 @@
 export interface BoxWrapperProps {
-    children?: JSX.Element|JSX.Element[];
+    children?: JSX.Element | JSX.Element[];
     height?: number | string;
     minHeight?: number | string;
     backgroundColor?: string;
@@ -9,18 +9,16 @@ export interface BoxWrapperProps {
 }
 
 export interface BoxHeaderProps {
-    title: string,
-    color?: string,
-    divierColor?: string
-  }
+    title: string;
+    color?: string;
+    divierColor?: string;
+}
 
-  
-type colorType = "primary" | "secondary" |  "grey";
-
+type colorType = 'primary' | 'secondary' | 'grey';
 
 export interface SocialIconBoxProps {
-    children: JSX.Element|JSX.Element[];
-    link? : string;
+    children: JSX.Element | JSX.Element[];
+    link?: string;
     backgroundColor?: string;
     color?: colorType;
 }
@@ -28,4 +26,3 @@ export interface SocialIconBoxProps {
 export interface IconBoxProps {
     color?: colorType;
 }
-
