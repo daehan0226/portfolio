@@ -1,4 +1,18 @@
-export default interface ITimeLineItem {
+export interface ITimeLineItemDeatail {
+    title: {
+        [lang: string]: string
+    },
+    detail: {
+        project: {
+            [lang: string]: string
+        },
+        tasks: {
+            [lang: string]: string
+        }[]
+    }[]
+}
+
+export default interface ITimeLineItem extends ITimeLineItemDeatail {
     dotColor : string,
     date: {
         seconds: number
@@ -9,10 +23,4 @@ export default interface ITimeLineItem {
     endDate: {
         seconds: number
     },
-    title: string,
-    subTitle: string,
-    detail: {
-        project: string,
-        tasks: string[]
-    }[]
   }
