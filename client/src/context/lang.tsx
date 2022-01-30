@@ -4,76 +4,72 @@ import en from '../i18n/en.json';
 import kr from '../i18n/kr.json';
 
 enum LangActionType {
-  SET_LANGUAGE = 'SET_LANGUAGE'
+    SET_LANGUAGE = 'SET_LANGUAGE',
 }
 
 interface LangState {
-  language: string;
+    language: string;
 }
 
 interface LangStateProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 interface SetLanguageAction {
-  type: typeof LangActionType.SET_LANGUAGE;
-  payload: string;
+    type: typeof LangActionType.SET_LANGUAGE;
+    payload: string;
 }
 
 interface ContextProps {
-  state: LangState;
-  dispatch: {
-    setLanguage: (lang: string) => void;
-    translate: (key: string) => string;
-  }
+    state: LangState;
+    dispatch: {
+        setLanguage: (lang: string) => void;
+        translate: (key: string) => string;
+    };
 }
 
 const langReducer = (state: LangState, action: SetLanguageAction): LangState => {
-  switch(action.type) {
-    case LangActionType.SET_LANGUAGE:
-      return {
-        language: action.payload
-      }
-    default:
-      return state;
-  }
-}
+    switch (action.type) {
+        case LangActionType.SET_LANGUAGE:
+            return {
+                language: action.payload,
+            };
+        default:
+            return state;
+    }
+};
 
 const localStorageLang = localStorage.getItem('language');
 const initialState = {
-  language: localStorageLang ? localStorageLang : 'KR'
-}
+    language: localStorageLang ? localStorageLang : 'KR',
+};
 
 export const LangContext = createContext({} as ContextProps);
 
 const LangState: FC<LangStateProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(langReducer, initialState);
+    const [state, dispatch] = useReducer(langReducer, initialState);
 
-  const setLanguage = (lang: string) => {
-    localStorage.setItem('language', lang);
-    dispatch({
-      type: LangActionType.SET_LANGUAGE,
-      payload: lang
-    });
-  }
+    const setLanguage = (lang: string) => {
+        localStorage.setItem('language', lang);
+        dispatch({
+            type: LangActionType.SET_LANGUAGE,
+            payload: lang,
+        });
+    };
 
-  const translate = (key: string): string => {
-    const { language } = state;
-    let langData: { [key: string]: string } = {};
+    const translate = (key: string): string => {
+        const { language } = state;
+        let langData: { [key: string]: string } = {};
 
-    if(language === 'EN') {
-      langData = en;
-    }else if(language === 'KR') {
-      langData = kr;
-    }
-    return langData[key];
-  }
+        if (language === 'EN') {
+            langData = en;
+        } else if (language === 'KR') {
+            langData = kr;
+        }
+        return langData[key];
+    };
 
-  return(
-    <LangContext.Provider value={{ state, dispatch: { setLanguage, translate }}}>
-      {children}
-    </LangContext.Provider>
-  );
-}
+    return <LangContext.Provider value={{ state, dispatch: { setLanguage, translate } }}>{children}</LangContext.Provider>;
+};
 
 export default LangState;

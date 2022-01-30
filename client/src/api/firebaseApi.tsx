@@ -1,7 +1,6 @@
-import { initializeApp } from 'firebase/app'
-import { getDatabase, ref } from 'firebase/database'
-import { getFirestore } from "firebase/firestore";
-
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref } from 'firebase/database';
+import { getFirestore } from 'firebase/firestore';
 
 const config = {
     apiKey: process.env.REACT_APP_APIKEY,
@@ -12,7 +11,7 @@ const config = {
     appId: process.env.REACT_APP_APPID,
 };
 
-const app = initializeApp(config)
-const database = getDatabase(app)
+const app = initializeApp(config);
+const database = getDatabase(app);
 export const db = getFirestore();
-export const postsRef = ref(database, "blog_posts")
+export const postsRef = ref(database, 'blog_posts');
