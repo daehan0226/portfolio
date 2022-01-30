@@ -1,11 +1,9 @@
 # [Portfolio](https://daehan0226.github.io/portfolio/)
-
-<div style="display: flex; align-items: center; justify-content: center;" markdown=1>
+<p align="center">
     <a href="https://daehan0226.github.io/portfolio/">
         <img src="https://github.com/daehan0226/portfolio/blob/main/client/public/images/project_portfolio_1.png" alt="portfolio" width="200"/>
     </a>
-</div>
-
+</p>
 ## Client
 * ReactJS + Typescript + MUI + ContextAPI
 * ESLint + Prettier
