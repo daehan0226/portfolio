@@ -26,6 +26,7 @@ const Blog = ({ refObject }: RefProps) => {
     const itemsToShow = useMemo(() => {
         return data.slice(0, numberOfitemsShown).map((post, i) => <BlogCard key={i} post={post} />);
     }, [data, numberOfitemsShown]);
+
     return (
         <div ref={refObject}>
             <BoxWrapper>
@@ -45,7 +46,7 @@ const Blog = ({ refObject }: RefProps) => {
                         },
                     }}
                 >
-                    {itemsToShow.length && itemsToShow}
+                    {itemsToShow}
                     <Box>
                         {itemsToShow.length < data.length && (
                             <Button sx={{ color: 'secondary.300', height: 100 }} onClick={showMore}>
