@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -8,43 +8,41 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ITimeLineItem } from '../../models';
 
-import {ErrorAlert, LoadingBox} from "../common"
+import { ErrorAlert, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
-import {convertDateToStr} from '../../utils';
-import AboutTimelineDetail from "./AboutTimelineDetail";
+import { convertDateToStr } from '../../utils';
+import AboutTimelineDetail from './AboutTimelineDetail';
+import { Typography } from '@mui/material';
 
-export default function AboutTimeline() {  
-  const {data, loading, error} = useGetDocs<ITimeLineItem>({collectionName:"timeline", sort:true});
-  
+const showDate = (item: ITimeLineItem): string => {
+    return item.date ? convertDateToStr(item.date.seconds) : `${convertDateToStr(item.startDate.seconds)} ~ ${convertDateToStr(item.endDate.seconds)}`;
+};
 
-  return (
-    <Timeline sx={{ padding: 0 }}>
-      {loading && (<LoadingBox />)}
-      {error && (<ErrorAlert msg={error} />)}
-      {data && data.map(item=>(
-        <TimelineItem key={item.title}>
-          <TimelineOppositeContent
-            sx={{ m: 'auto 0', padding: '8px 8px',}}
-            align="right"
-            variant="body2"
-            color="text.secondary"
-          >
-            {item.date ? (
-              `${convertDateToStr(item.date.seconds)}`
-            ) : (
-              `${convertDateToStr(item.startDate.seconds)} ~ ${convertDateToStr(item.endDate.seconds)}`
-            )}
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot sx={{backgroundColor: item.dotColor}} />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent sx={{ display:'flex', padding: '8px 8px', flexDirection:'column', alignItems: 'left', justifyContent:'center' }}>
-            <AboutTimelineDetail title={item.title} detail={item.detail} />
-          </TimelineContent>
-        </TimelineItem>
-      ))}
-    </Timeline>
-  );
+export default function AboutTimeline() {
+    const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sort: true });
+    return (
+        <Timeline sx={{ padding: 0 }}>
+            {loading && <LoadingBox />}
+            {error && <ErrorAlert msg={error} />}
+            {data &&
+                data.map(item => (
+                    <TimelineItem key={item.title.KR}>
+                        <TimelineOppositeContent sx={{ m: 'auto 0', padding: '8px 8px', display: { mobile: 'none', tablet: 'block' } }} align="right" variant="body2" color="text.secondary">
+                            {showDate(item)}
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineConnector />
+                            <TimelineDot sx={{ backgroundColor: item.dotColor }} />
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ display: 'flex', padding: '8px 8px', flexDirection: 'column', alignItems: 'left', justifyContent: 'center' }}>
+                            <Typography variant="body2" sx={{ display: { mobile: 'block', tablet: 'none' } }}>
+                                {showDate(item)}
+                            </Typography>
+                            <AboutTimelineDetail title={item.title} detail={item.detail} />
+                        </TimelineContent>
+                    </TimelineItem>
+                ))}
+        </Timeline>
+    );
 }

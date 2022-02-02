@@ -1,5 +1,3 @@
-import ScrollTop from "./ScrollTop"
+import ScrollTop from './ScrollTop';
 
-export {
-    ScrollTop
-}
+export { ScrollTop };

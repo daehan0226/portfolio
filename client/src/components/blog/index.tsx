@@ -1,5 +1,3 @@
-import Blog from "./Blog"
+import Blog from './Blog';
 
-export {
-    Blog
-}
+export { Blog };

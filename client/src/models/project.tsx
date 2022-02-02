@@ -1,27 +1,26 @@
 export default interface IProject {
-    name: string,
-    image?: string,
-    desc: string,
-    link: string,
+    name: string;
+    image?: string;
+    desc: string;
+    link: string;
     back?: {
-        github: string,
-        desc: string,
-        features: string[],
-    },
+        github: string;
+        desc: string;
+        features: string[];
+    };
     front?: {
-        github: string,
-        desc: string,
-        features: string[],
-    },
+        github: string;
+        desc: string;
+        features: string[];
+    };
     crawler?: {
-        github: string,
-        desc: string,
-        features: string[],
-    },
+        github: string;
+        desc: string;
+        features: string[];
+    };
 }
 
 export interface IProjectTest {
-    name: string,
-    desc: string
+    name: string;
+    desc: string;
 }
-  
