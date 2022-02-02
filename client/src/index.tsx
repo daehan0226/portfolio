@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import LangState from './context/lang';
 
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <LangState>
-      <App />
-    </LangState>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <LangState>
+            <App />
+        </LangState>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
