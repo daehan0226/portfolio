@@ -32,5 +32,7 @@
     "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
     "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
-    "furfellasAppBackFeatureTwo": "MySQL- ORM"
+    "furfellasAppBackFeatureTwo": "MySQL- ORM",
+    "Blog": "",
+    "blogInfo": "아래 블로그 글 내용 하루에 한번만 업데이트 되기 때문에 실제 글과 다를 수 있습니다."
   }

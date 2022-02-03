@@ -32,5 +32,8 @@
     "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
     "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
-    "furfellasAppBackFeatureTwo": "MySQL-ORM"
+    "furfellasAppBackFeatureTwo": "MySQL-ORM",
+    "Blog": "",
+    "blogInfo": "It might not be correct since blog posts data is updated once a day."
+  
   }
