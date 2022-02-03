@@ -28,7 +28,11 @@ const ProjectPortfolio: FC = () => {
                     alt={translate('portfolioName')}
                 />
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
-                    <ProjectFeatureBox name={'portfolio'} title={'Front'} features={[translate('portfolioFrontFeatureOne'), translate('portfolioFrontFeatureTwo')]} />
+                    <ProjectFeatureBox
+                        name={'portfolio'}
+                        title={'Front'}
+                        features={[translate('portfolioFrontFeatureOne'), translate('portfolioFrontFeatureTwo'), translate('portfolioFrontFeatureThree')]}
+                    />
                     <ProjectFeatureBox
                         name={'portfolio'}
                         title={'Back'}
