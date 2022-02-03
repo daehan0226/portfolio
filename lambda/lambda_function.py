@@ -6,7 +6,7 @@ import logging
 
 from config import config
 
-# from src.firestore_client import FirestoreClient
+from src.firestore_client import FirestoreClient
 from src.parser import Parser
 from src.post import Post
 
@@ -16,7 +16,6 @@ logger.setLevel(logging.INFO)
 
 def handler(event, context):
     try:
-        logger.info(f"FIRESTORE_TYPE : {os.environ.get('FIRESTORE_TYPE')}")
         logger.info(f"env : {os.environ.get('LAMBDA_ENV')}")
         elements = config["elements"]
         post_selector = config["elements"]["post"]
@@ -39,9 +38,9 @@ def handler(event, context):
         # parse and upsert
         for post_element in post_elements:
             post = Post(Post.parse_post_date(post_element))
-            # FirestoreClient.upsert(
-            #     config["firestore_collection"], post.id, post.serialize
-            # )
+            FirestoreClient.upsert(
+                config["firestore_collection"], post.id, post.serialize
+            )
 
         logger.info(f"parsed post : {len(post_elements)}")
     except Exception as e:
