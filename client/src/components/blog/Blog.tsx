@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 
 import { RefProps, IBlog } from '../../models';
-import { BoxWrapper, BoxHeader, ErrorAlert, LoadingBox } from '../common';
+import { BoxWrapper, BoxHeader, AlertMsg, LoadingBox } from '../common';
 import BlogCard from './BlogCard';
 import useGetDocs from '../../hooks/useGetDocs';
 import { LangContext } from '../../context/lang';
@@ -62,9 +62,10 @@ const Blog = ({ refObject }: RefProps) => {
                 <BoxHeader title={translate('blog')} />
                 <Box>
                     {loading && <LoadingBox />}
-                    {error && <ErrorAlert msg={error} />}
+                    {error && <AlertMsg msg={error} title="Error" type="error" />}
                 </Box>
                 <Box>
+                    <AlertMsg msg={translate('blogInfo')} title="" type="info" />
                     <Chip
                         size="small"
                         label="All"
