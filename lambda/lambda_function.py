@@ -5,6 +5,7 @@ import time
 import logging
 
 from config import config
+
 from src.firestore_client import FirestoreClient
 from src.parser import Parser
 from src.post import Post
@@ -15,7 +16,7 @@ logger.setLevel(logging.INFO)
 
 def handler(event, context):
     try:
-        logger.info(f"env : {os.environ.get('ENV')}")
+        logger.info(f"env : {os.environ.get('LAMBDA_ENV')}")
         elements = config["elements"]
         post_selector = config["elements"]["post"]
 
