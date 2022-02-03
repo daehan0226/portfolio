@@ -37,9 +37,9 @@ def handler(event, context):
         # parse and upsert
         for post_element in post_elements:
             post = Post(Post.parse_post_date(post_element))
-            FirestoreClient.upsert(
-                config["firestore_collection"], post.id, post.serialize
-            )
+            # FirestoreClient.upsert(
+            #     config["firestore_collection"], post.id, post.serialize
+            # )
 
         logger.info(f"parsed post : {len(post_elements)}")
     except Exception as e:
