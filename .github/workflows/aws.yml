@@ -9,6 +9,7 @@ env:
   AWS_REGION: ap-northeast-2
   ECR_REPOSITORY: github-actions
   LAMBDA_FUNCTION: ecr-test
+  WORKING_DIRECTORY: ./lambda
 
 jobs:
   deploy:
@@ -33,6 +34,7 @@ jobs:
 
       - name: Build, tag, and push image to Amazon ECR and then update image url of lambda layer
         id: build-image
+        working-directory: ${{ env.WORKING_DIRECTORY }}
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
