@@ -2,7 +2,9 @@
 client/node_modules
 client/build 
 
+
 # lambda
+lambda/deploy.sh
 lambda/venv
 lambda/config/credentials.json
 *.pyc
