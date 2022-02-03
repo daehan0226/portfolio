@@ -32,20 +32,21 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build, tag, and push image to Amazon ECR
-        id: build-image
-        working-directory: ${{ env.WORKING_DIRECTORY }}
+      - name: Set Image uri
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
           echo "image_uri=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+        run: |
+          echo "build and push to ${{ env.image_uri }}"
           docker build -t ${{ env.image_uri }} --build-arg LAMBDA_ENV=prod .
           docker push ${{ env.image_uri }}
       - name: Update image url of Lambda layer
-        run: echo "update Lambda image url to ${{ env.image_uri }}"
+        run: |
+          echo "update Lambda image url to ${{ env.image_uri }}"
           aws lambda update-function-code --function-name $LAMBDA_FUNCTION --image-uri ${{ env.image_uri }}
