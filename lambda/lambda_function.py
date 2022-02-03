@@ -5,7 +5,8 @@ import time
 import logging
 
 from config import config
-from src.firestore_client import FirestoreClient
+
+# from src.firestore_client import FirestoreClient
 from src.parser import Parser
 from src.post import Post
 
