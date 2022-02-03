@@ -14,13 +14,10 @@ export interface ITimeLineItemDeatail {
 
 export default interface ITimeLineItem extends ITimeLineItemDeatail {
     dotColor: string;
-    date: {
-        seconds: number;
-    };
     startDate: {
         seconds: number;
     };
-    endDate: {
+    endDate?: {
         seconds: number;
     };
 }
