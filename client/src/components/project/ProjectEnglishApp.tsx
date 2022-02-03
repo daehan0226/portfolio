@@ -28,7 +28,11 @@ const ProjectEnglishApp: FC = () => {
                     alt={translate('englihAppName')}
                 />
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
-                    <ProjectFeatureBox name={'englishApp'} title={'Front'} features={[translate('englihAppFrontFeatureOne'), translate('englihAppFrontFeatureTwo')]} />
+                    <ProjectFeatureBox
+                        name={'englishApp'}
+                        title={'Front'}
+                        features={[translate('englihAppFrontFeatureOne'), translate('englihAppFrontFeatureTwo'), translate('englihAppFrontFeatureThree'), translate('englihAppFrontFeatureFour')]}
+                    />
                     <Link href={process.env.REACT_APP_PROJECT_ENGLISH_APP_GITHUB_FRONT}>
                         <GitHubIcon />
                     </Link>
