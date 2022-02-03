@@ -1,3 +1,4 @@
+import os
 import json
 import random
 import time
@@ -14,6 +15,7 @@ logger.setLevel(logging.INFO)
 
 def handler(event, context):
     try:
+        logger.info(f"env : {os.environ.get('ENV')}")
         elements = config["elements"]
         post_selector = config["elements"]["post"]
 
