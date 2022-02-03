@@ -16,6 +16,7 @@ logger.setLevel(logging.INFO)
 
 def handler(event, context):
     try:
+        logger.info(f"FIRESTORE_TYPE : {os.environ.get('FIRESTORE_TYPE')}")
         logger.info(f"env : {os.environ.get('LAMBDA_ENV')}")
         elements = config["elements"]
         post_selector = config["elements"]["post"]
