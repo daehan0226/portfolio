@@ -75,7 +75,7 @@ const Blog = ({ refObject }: RefProps) => {
                             selectAllCategories();
                         }}
                     />
-                    {[...new Set(data.map(item => item.category))].map(category => (
+                    {categories.map(category => (
                         <Chip
                             key={category}
                             size="small"
