@@ -8,7 +8,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ITimeLineItem } from '../../models';
 
-import { ErrorAlert, LoadingBox } from '../common';
+import { AlertMsg, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
 import { convertDateToStr } from '../../utils';
 import AboutTimelineDetail from './AboutTimelineDetail';
@@ -23,7 +23,7 @@ export default function AboutTimeline() {
     return (
         <Timeline sx={{ padding: 0 }}>
             {loading && <LoadingBox />}
-            {error && <ErrorAlert msg={error} />}
+            {error && <AlertMsg msg={error} title="Error" type="error" />}
             {data &&
                 data.map(item => (
                     <TimelineItem key={item.title.KR}>
