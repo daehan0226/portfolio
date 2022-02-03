@@ -42,9 +42,10 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg LAMBDA_ENV=prod .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          export image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "::set-env name=image::$image"
+          docker build -t image --build-arg LAMBDA_ENV=prod .
+          docker push image
       - name: Update image url of Lambda layer
         run: echo "update Lambda image url to $image"
           aws lambda update-function-code --function-name $LAMBDA_FUNCTION --image-uri $image
