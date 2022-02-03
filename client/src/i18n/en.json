@@ -12,15 +12,18 @@
     "Project": "",
     "portfolioName": "Portfolio",
     "portfolioDesc": "Portfolio Project",
-    "portfolioFrontFeatureOne": "ReactJS - Typescript, ContextAPI(Language)",
+    "portfolioFrontFeatureOne": "ReactJS - Typescript, ContextAPI - Language",
     "portfolioFrontFeatureTwo": "MUI - Component, Inline Styling, Color Theme, Responsive Breakpoints",
-    "portfolioBackFeatureOne": "Firebase - store blog posts data",
+    "portfolioFrontFeatureThree": "Deploy to Github pages",
+    "portfolioBackFeatureOne": "Firestore - store blog posts data",
     "portfolioBackFeatureTwo": "AWS ECR - Python crawler Docker Image",
     "portfolioBackFeatureThree": "AWS Lambda with Event Trigger",
     "englihAppName": "Learn English App",
     "englihAppDesc": "Search Phrasal verbs and Idioms, save them in my page to study later, play some games with them",
     "englihAppFrontFeatureOne": "NextJS, Redux(Auth state)",
     "englihAppFrontFeatureTwo": "MUI - Component, Styled-component,Responsive UI",
+    "englihAppFrontFeatureThree": "Github actions - Depoly build file to S3",
+    "englihAppFrontFeatureFour": "Connect to a subdomain from Cafe 24",
     "englihAppBackFeatureOne": "Python Flask API",
     "englihAppBackFeatureTwo": "MySQL- ORM, MongoDB - phrasal verbs, idioms, user like data, Redis - user session",
     "englihAppCrawlerFeatureOne": "Crawler with aiohttp - crawl phrasal verbs, idioms from English dictionary web sites",    
@@ -29,5 +32,8 @@
     "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
     "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
-    "furfellasAppBackFeatureTwo": "MySQL- ORM"
+    "furfellasAppBackFeatureTwo": "MySQL-ORM",
+    "Blog": "",
+    "blogInfo": "It might not be correct since blog posts data is updated once a day."
+  
   }
