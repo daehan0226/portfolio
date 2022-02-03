@@ -28,8 +28,9 @@ jobs:
 
       - run: npm ci
         working-directory: ${{ env.working-directory }}
-      - run: ls
+
       - run: npm run build
+        working-directory: ${{ env.working-directory }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
