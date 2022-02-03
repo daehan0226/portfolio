@@ -38,14 +38,14 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-          IMAGAE_URI: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         run: |
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          # echo "IMAGAE_URI=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
-          docker build -t $IMAGAE_URI --build-arg LAMBDA_ENV=prod .
-          docker push $IMAGAE_URI
-      - name: Update image uri of Lambda layer
-        run: echo "update Lambda image uri to $IMAGAE_URI"
-          aws lambda update-function-code --function-name $LAMBDA_FUNCTION --image-uri $IMAGAE_URI
+          export image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "::set-env name=image::$image"
+          docker build -t image --build-arg LAMBDA_ENV=prod .
+          docker push image
+      - name: Update image url of Lambda layer
+        run: echo "update Lambda image url to $image"
+          aws lambda update-function-code --function-name $LAMBDA_FUNCTION --image-uri $image
