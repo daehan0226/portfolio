@@ -3,7 +3,7 @@ name: Push image to Amazon ECR and update Amazon Lambda function image url
 on:
   push:
     branches:
-      - main
+      - lambda/deploy
 
 env:
   AWS_REGION: ap-northeast-2
