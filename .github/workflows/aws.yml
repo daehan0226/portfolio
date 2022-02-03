@@ -7,8 +7,8 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2
-  ECR_REPOSITORY: github-actions
-  LAMBDA_FUNCTION: ecr-test
+  ECR_REPOSITORY: crawler
+  LAMBDA_FUNCTION: tistory_crawler
   WORKING_DIRECTORY: ./lambda
 
 jobs:
