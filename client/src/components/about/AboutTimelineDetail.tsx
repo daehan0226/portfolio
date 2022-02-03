@@ -16,7 +16,7 @@ export default function AboutTimelineDetail({ title, detail }: ITimeLineItemDeat
         <StyledEngineProvider injectFirst>
             <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }}>
                 <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={detail && <ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     sx={{

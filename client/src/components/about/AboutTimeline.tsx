@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -15,17 +15,37 @@ import AboutTimelineDetail from './AboutTimelineDetail';
 import { Typography } from '@mui/material';
 
 const showDate = (item: ITimeLineItem): string => {
-    return item.date ? convertDateToStr(item.date.seconds) : `${convertDateToStr(item.startDate.seconds)} ~ ${convertDateToStr(item.endDate.seconds)}`;
+    let date: string = convertDateToStr(item.startDate.seconds);
+    if (item.endDate && item.endDate.seconds !== item.startDate.seconds) {
+        date += `~ ${convertDateToStr(item.endDate.seconds)}`;
+    }
+    return date;
+};
+
+type dateProp = {
+    startDate: {
+        seconds: number;
+    };
+};
+
+const compare = (a: dateProp, b: dateProp) => {
+    if (a.startDate.seconds > b.startDate.seconds) {
+        return -1;
+    }
+    if (a.startDate.seconds < b.startDate.seconds) {
+        return 1;
+    }
+    return 0;
 };
 
 export default function AboutTimeline() {
-    const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sort: true });
+    const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline' });
     return (
         <Timeline sx={{ padding: 0 }}>
             {loading && <LoadingBox />}
             {error && <AlertMsg msg={error} title="Error" type="error" />}
             {data &&
-                data.map(item => (
+                data.sort(compare).map(item => (
                     <TimelineItem key={item.title.KR}>
                         <TimelineOppositeContent sx={{ m: 'auto 0', padding: '8px 8px', display: { mobile: 'none', tablet: 'block' } }} align="right" variant="body2" color="text.secondary">
                             {showDate(item)}
