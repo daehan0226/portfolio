@@ -9,8 +9,24 @@ import BlogCard from './BlogCard';
 import useGetDocs from '../../hooks/useGetDocs';
 import { LangContext } from '../../context/lang';
 
+type dateProp = {
+    date: {
+        seconds: number;
+    };
+};
+
+const compare = (a: dateProp, b: dateProp) => {
+    if (a.date.seconds > b.date.seconds) {
+        return -1;
+    }
+    if (a.date.seconds < b.date.seconds) {
+        return 1;
+    }
+    return 0;
+};
+
 const Blog = ({ refObject }: RefProps) => {
-    const { data, loading, error } = useGetDocs<IBlog>({ collectionName: 'tistory_posts', sort: true });
+    const { data, loading, error } = useGetDocs<IBlog>({ collectionName: 'tistory_posts' });
     const [categories, setCategories] = useState<string[]>([]);
     const [categoryPosts, setCategoryPosts] = useState<IBlog[]>([]);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -53,7 +69,10 @@ const Blog = ({ refObject }: RefProps) => {
     }, [data]);
 
     const itemsToShow = useMemo(() => {
-        return categoryPosts.slice(0, numberOfitemsShown).map((post, i) => <BlogCard key={i} post={post} />);
+        return categoryPosts
+            .slice(0, numberOfitemsShown)
+            .sort(compare)
+            .map((post, i) => <BlogCard key={i} post={post} />);
     }, [categoryPosts, numberOfitemsShown]);
 
     return (
@@ -75,7 +94,7 @@ const Blog = ({ refObject }: RefProps) => {
                             selectAllCategories();
                         }}
                     />
-                    {[...new Set(data.map(item => item.category))].map(category => (
+                    {categories.map(category => (
                         <Chip
                             key={category}
                             size="small"
