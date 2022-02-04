@@ -18,6 +18,7 @@
     "portfolioBackFeatureOne": "Firestore - store blog posts data",
     "portfolioBackFeatureTwo": "AWS ECR - Python crawler Docker Image",
     "portfolioBackFeatureThree": "AWS Lambda with Event Trigger",
+    "portfolioBackFeatureFour": "Github actions - Push docker Image to AWS ECR and update Image URI of AWS Lambda function",
     "englihAppName": "Learn English App",
     "englihAppDesc": "Search Phrasal verbs and Idioms, save them in my page to study later, play some games with them",
     "englihAppFrontFeatureOne": "NextJS, Redux(Auth state)",

@@ -18,6 +18,7 @@
     "portfolioBackFeatureOne": "Firestore - 티스토리 블로그 글 저장",
     "portfolioBackFeatureTwo": "AWS ECR - 크롤링 파이썬 스트립트 도커 이미지 푸시",
     "portfolioBackFeatureThree": "AWS Lambda 트리거 이벤트 추가",
+    "portfolioBackFeatureFour": "Github actions - AWS ECR에 도커 이미지 푸시 후 해당 이미지 AWS Lamda함수의 이미지 업데이트",
     "englihAppName": "영어 학습 앱",
     "englihAppDesc": "구동사와 이디엄을 검색할 수 있고, 나의 페이지에 저장하고, 게임을 통해 학습",
     "englihAppFrontFeatureOne": "NextJS, 리덕스(로그인 상태)",

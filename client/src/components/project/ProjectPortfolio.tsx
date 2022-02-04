@@ -36,7 +36,7 @@ const ProjectPortfolio: FC = () => {
                     <ProjectFeatureBox
                         name={'portfolio'}
                         title={'Back'}
-                        features={[translate('portfolioBackFeatureOne'), translate('portfolioBackFeatureTwo'), translate('portfolioBackFeatureThree')]}
+                        features={[translate('portfolioBackFeatureOne'), translate('portfolioBackFeatureTwo'), translate('portfolioBackFeatureThree'), translate('portfolioBackFeatureFour')]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_PORTFOLIO_GITHUB}>
                         <GitHubIcon />
