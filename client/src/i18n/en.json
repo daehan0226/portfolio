@@ -10,6 +10,10 @@
     "langEn": "English",
     "About": "",
     "Project": "",
+    "patentName": "Patent Search",
+    "patentDesc": "Patent Search Service. search granted patents with search keyword advice",
+    "patentBackFeatureOne": "NodeJs Express -Typescript, MongoDB, Jest",
+    "patentBackFeatureTwo": "Crawler - parseing patent data",
     "portfolioName": "Portfolio",
     "portfolioDesc": "Portfolio Project",
     "portfolioFrontFeatureOne": "ReactJS - Typescript, ContextAPI - Language",
@@ -18,6 +22,7 @@
     "portfolioBackFeatureOne": "Firestore - store blog posts data",
     "portfolioBackFeatureTwo": "AWS ECR - Python crawler Docker Image",
     "portfolioBackFeatureThree": "AWS Lambda with Event Trigger",
+    "portfolioBackFeatureFour": "Github actions - Push docker Image to AWS ECR and update Image URI of AWS Lambda function",
     "englihAppName": "Learn English App",
     "englihAppDesc": "Search Phrasal verbs and Idioms, save them in my page to study later, play some games with them",
     "englihAppFrontFeatureOne": "NextJS, Redux(Auth state)",
@@ -32,5 +37,8 @@
     "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
     "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
-    "furfellasAppBackFeatureTwo": "MySQL-ORM"
+    "furfellasAppBackFeatureTwo": "MySQL-ORM",
+    "Blog": "",
+    "blogInfo": "It might not be correct since blog posts data is updated once a day."
+  
   }

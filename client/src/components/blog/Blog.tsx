@@ -4,13 +4,13 @@ import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 
 import { RefProps, IBlog } from '../../models';
-import { BoxWrapper, BoxHeader, ErrorAlert, LoadingBox } from '../common';
+import { BoxWrapper, BoxHeader, AlertMsg, LoadingBox } from '../common';
 import BlogCard from './BlogCard';
 import useGetDocs from '../../hooks/useGetDocs';
 import { LangContext } from '../../context/lang';
 
 const Blog = ({ refObject }: RefProps) => {
-    const { data, loading, error } = useGetDocs<IBlog>({ collectionName: 'tistory_posts', sort: true });
+    const { data, loading, error } = useGetDocs<IBlog>({ collectionName: 'tistory_posts', sortKey: 'date' });
     const [categories, setCategories] = useState<string[]>([]);
     const [categoryPosts, setCategoryPosts] = useState<IBlog[]>([]);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -62,9 +62,10 @@ const Blog = ({ refObject }: RefProps) => {
                 <BoxHeader title={translate('blog')} />
                 <Box>
                     {loading && <LoadingBox />}
-                    {error && <ErrorAlert msg={error} />}
+                    {error && <AlertMsg msg={error} title="Error" type="error" />}
                 </Box>
                 <Box>
+                    <AlertMsg msg={translate('blogInfo')} title="" type="info" />
                     <Chip
                         size="small"
                         label="All"
@@ -74,7 +75,7 @@ const Blog = ({ refObject }: RefProps) => {
                             selectAllCategories();
                         }}
                     />
-                    {[...new Set(data.map(item => item.category))].map(category => (
+                    {categories.map(category => (
                         <Chip
                             key={category}
                             size="small"

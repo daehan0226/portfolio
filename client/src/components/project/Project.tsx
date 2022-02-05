@@ -6,6 +6,20 @@ import ProjectPortfolio from './ProjectPortfolio';
 import ProjectEnglishApp from './ProjectEnglishApp';
 import ProjectFurfellasApp from './ProjectFurfellasApp';
 import { LangContext } from '../../context/lang';
+import ProjectPatent from './ProjectPatent';
+
+const CustomeDivider = () => {
+    return (
+        <Divider
+            sx={{
+                backgroundColor: 'primary.50',
+                borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2 },
+                width: '60%',
+                margin: '20px auto',
+            }}
+        />
+    );
+};
 
 const Project: FC<RefProps> = ({ refObject }) => {
     const {
@@ -16,24 +30,12 @@ const Project: FC<RefProps> = ({ refObject }) => {
         <div ref={refObject}>
             <BoxWrapper backgroundColor="primary.800">
                 <BoxHeader title={translate('project')} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
+                <ProjectPatent />
+                <CustomeDivider />
                 <ProjectPortfolio />
-                <Divider
-                    sx={{
-                        backgroundColor: 'primary.50',
-                        borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2 },
-                        width: '60%',
-                        margin: '20px auto',
-                    }}
-                />
+                <CustomeDivider />
                 <ProjectEnglishApp />
-                <Divider
-                    sx={{
-                        backgroundColor: 'primary.50',
-                        borderBottomWidth: { mobile: 1, tablet: 1.5, laptop: 2 },
-                        width: '60%',
-                        margin: '20px auto',
-                    }}
-                />
+                <CustomeDivider />
                 <ProjectFurfellasApp />
             </BoxWrapper>
         </div>
