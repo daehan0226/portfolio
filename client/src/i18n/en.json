@@ -10,7 +10,7 @@
     "langEn": "English",
     "About": "",
     "Project": "",
-    "patentName": "Patent Search",
+    "patentName": "Patent Search APP API",
     "patentDesc": "Patent Search Service. search granted patents with search keyword advice",
     "patentBackFeatureOne": "NodeJs Express -Typescript, MongoDB, Jest",
     "patentBackFeatureTwo": "Crawler - parseing patent data",
