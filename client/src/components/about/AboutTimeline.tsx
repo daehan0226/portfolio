@@ -17,7 +17,7 @@ import AboutTimelineDetail from './AboutTimelineDetail';
 const showDate = (item: ITimeLineItem): string => {
     let date: string = convertDateToStr(item.startDate.seconds);
     if (item.endDate && item.endDate.seconds !== item.startDate.seconds) {
-        date += `~ ${convertDateToStr(item.endDate.seconds)}`;
+        date += ` ~ ${convertDateToStr(item.endDate.seconds)}`;
     }
     return date;
 };
@@ -32,7 +32,7 @@ export default function AboutTimeline() {
                 data.map(item => (
                     <TimelineItem key={item.title.KR}>
                         <TimelineOppositeContent
-                            sx={{ flex: 'none', margin: 'auto 0px', visibility: { mobile: 'hidden', tablet: 'visible' }, width: { mobile: '0%', tablet: '20%', latop: '25%', desktop: '30%' } }}
+                            sx={{ flex: 'none', margin: 'auto 0px', visibility: { mobile: 'hidden', tablet: 'visible' }, width: { mobile: '0%', tablet: '20%', labtop: '25%', desktop: '30%' } }}
                         >
                             <Typography variant="body1">{showDate(item)}</Typography>
                         </TimelineOppositeContent>

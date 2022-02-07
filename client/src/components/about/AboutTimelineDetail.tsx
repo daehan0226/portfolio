@@ -23,7 +23,7 @@ export default function AboutTimelineDetail({ title, detail, date }: ITimeLineIt
                     sx={{
                         flex: 0,
                         justifyContent: 'flex-start',
-                        alignItems: 'end',
+                        alignItems: { mobile: 'center', laptop: 'end' },
                         padding: 0,
                         '& .Mui-expanded': { margin: '0 !important' },
                     }}
