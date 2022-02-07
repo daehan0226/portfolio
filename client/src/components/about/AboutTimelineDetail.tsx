@@ -23,9 +23,9 @@ export default function AboutTimelineDetail({ title, detail, date }: ITimeLineIt
                     sx={{
                         flex: 0,
                         justifyContent: 'flex-start',
-                        alignItems: 'flex-start',
+                        alignItems: 'end',
                         padding: 0,
-                        '& .Mui-expanded': { margin: '0 !important', minHeight: '60px !important' },
+                        '& .Mui-expanded': { margin: '0 !important' },
                     }}
                 >
                     <Box>
