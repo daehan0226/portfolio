@@ -5,6 +5,8 @@ declare namespace NodeJS {
         REACT_APP_GITHUB: string;
         REACT_APP_GMAIL: string;
         REACT_APP_TISTORY: string;
+        REACT_APP_PROJECT_PATENT_LINK: string;
+        REACT_APP_PROJECT_PATENT_GITHUB_BACK: string;
         REACT_APP_PROJECT_PORTFOLIO_LINK: string;
         REACT_APP_PROJECT_PORTFOLIO_GITHUB: string;
         REACT_APP_PROJECT_PORTFOLIO_IMAGE: string;
