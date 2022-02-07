@@ -7,13 +7,13 @@ import { LangContext } from '../../context/lang';
 
 import { ProjectFeatureBox, ProjectImageBox, ProjectHeader } from './common';
 
-const ProjectPortfolio: FC = () => {
+const ProjectPatent: FC = () => {
     const {
         dispatch: { translate },
     } = useContext(LangContext);
     return (
         <Box>
-            <ProjectHeader href={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK} title={translate('portfolioName')} />
+            <ProjectHeader href={process.env.REACT_APP_PROJECT_PATENT_LINK} title={translate('patentName')} />
             <Box
                 sx={{
                     display: 'flex',
@@ -22,23 +22,14 @@ const ProjectPortfolio: FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                <ProjectImageBox
+                {/* <ProjectImageBox
                     link={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK}
                     src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_PORTFOLIO_IMAGE}`}
                     alt={translate('portfolioName')}
-                />
+                /> */}
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
-                    <ProjectFeatureBox
-                        name={'portfolio'}
-                        title={'Front'}
-                        features={[translate('portfolioFrontFeatureOne'), translate('portfolioFrontFeatureTwo'), translate('portfolioFrontFeatureThree')]}
-                    />
-                    <ProjectFeatureBox
-                        name={'portfolio'}
-                        title={'Back'}
-                        features={[translate('portfolioBackFeatureOne'), translate('portfolioBackFeatureTwo'), translate('portfolioBackFeatureThree'), translate('portfolioBackFeatureFour')]}
-                    />
-                    <Link href={process.env.REACT_APP_PROJECT_PORTFOLIO_GITHUB}>
+                    <ProjectFeatureBox name={'patent'} title={'Back'} features={[translate('patentBackFeatureOne'), translate('patentBackFeatureTwo')]} />
+                    <Link href={process.env.REACT_APP_PROJECT_PATENT_GITHUB_BACK}>
                         <GitHubIcon />
                     </Link>
                 </Box>
@@ -46,4 +37,4 @@ const ProjectPortfolio: FC = () => {
         </Box>
     );
 };
-export default ProjectPortfolio;
+export default ProjectPatent;
