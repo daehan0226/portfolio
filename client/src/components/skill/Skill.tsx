@@ -8,7 +8,7 @@ import { Typography } from '@mui/material';
 const skills: [string, string[]][] = [
     ['Backend', ['Python', 'Flask', 'Pytest', 'NodeJS-TypeScript', 'Express', 'Jest', 'AWS - Lambda, ECR, EC2, S3', 'Cloud - Firestore']],
     ['Frontend', ['JavaScript', 'TypeScript', 'ReactJS', 'NextJS', 'HTML/CSS/SASS']],
-    ['DevOps', ['Nginx', 'MySQL', 'MongoDB', 'Elasticsearch', 'Redis', 'Github Actions']],
+    ['DevOps', ['Docker', 'Nginx', 'MySQL', 'MongoDB', 'Elasticsearch', 'Redis', 'Github Actions']],
     ['Languages', ['Korean - Native Speaker', 'English - Fluent']],
 ];
 
