@@ -7,14 +7,15 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { LangContext } from '../../context/lang';
 import { ITimeLineItemDeatail } from '../../models/about';
+import { Box } from '@mui/material';
 
-export default function AboutTimelineDetail({ title, detail }: ITimeLineItemDeatail) {
+export default function AboutTimelineDetail({ title, detail, date }: ITimeLineItemDeatail) {
     const {
         state: { language },
     } = useContext(LangContext);
     return (
         <StyledEngineProvider injectFirst>
-            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }}>
+            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded={detail && detail.length > 0}>
                 <AccordionSummary
                     expandIcon={detail && <ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -22,15 +23,21 @@ export default function AboutTimelineDetail({ title, detail }: ITimeLineItemDeat
                     sx={{
                         flex: 0,
                         justifyContent: 'flex-start',
-                        padding: { mobile: 0, tablet: 1, laptop: 2 },
-                        '& .Mui-expanded': { marginBottom: '0 !important' },
+                        alignItems: { mobile: 'center' },
+                        padding: 0,
+                        '& .Mui-expanded': { margin: '0 !important' },
                     }}
                 >
-                    <Typography variant="h6" sx={{ wordBreak: 'break-word' }}>
-                        {title[language]}
-                    </Typography>
+                    <Box>
+                        <Typography sx={{ display: { tablet: 'none' } }} variant="body1">
+                            {date}
+                        </Typography>
+                        <Typography variant="h6" sx={{ wordBreak: 'break-word' }}>
+                            {title[language]}
+                        </Typography>
+                    </Box>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={{ padding: 0, paddingBottom: 1 }}>
                     {detail &&
                         detail.map(({ project, tasks }) => (
                             <div key={project[language]}>

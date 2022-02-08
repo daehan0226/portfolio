@@ -7,17 +7,17 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ITimeLineItem } from '../../models';
+import Typography from '@mui/material/Typography';
 
 import { AlertMsg, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
 import { convertDateToStr } from '../../utils';
 import AboutTimelineDetail from './AboutTimelineDetail';
-import { Typography } from '@mui/material';
 
 const showDate = (item: ITimeLineItem): string => {
     let date: string = convertDateToStr(item.startDate.seconds);
     if (item.endDate && item.endDate.seconds !== item.startDate.seconds) {
-        date += `~ ${convertDateToStr(item.endDate.seconds)}`;
+        date += ` ~ ${convertDateToStr(item.endDate.seconds)}`;
     }
     return date;
 };
@@ -31,8 +31,10 @@ export default function AboutTimeline() {
             {data &&
                 data.map(item => (
                     <TimelineItem key={item.title.KR}>
-                        <TimelineOppositeContent sx={{ m: 'auto 0', padding: '8px 8px', display: { mobile: 'none', tablet: 'block' } }} align="right" variant="body2" color="text.secondary">
-                            {showDate(item)}
+                        <TimelineOppositeContent
+                            sx={{ flex: 'none', margin: 'auto 0px', visibility: { mobile: 'hidden', tablet: 'visible' }, width: { mobile: '0%', tablet: '20%', labtop: '25%', desktop: '30%' } }}
+                        >
+                            <Typography variant="body1">{showDate(item)}</Typography>
                         </TimelineOppositeContent>
                         <TimelineSeparator>
                             <TimelineConnector />
@@ -40,10 +42,7 @@ export default function AboutTimeline() {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent sx={{ display: 'flex', padding: '8px 8px', flexDirection: 'column', alignItems: 'left', justifyContent: 'center' }}>
-                            <Typography variant="body2" sx={{ display: { mobile: 'block', tablet: 'none' } }}>
-                                {showDate(item)}
-                            </Typography>
-                            <AboutTimelineDetail title={item.title} detail={item.detail} />
+                            <AboutTimelineDetail title={item.title} detail={item.detail} date={showDate(item)} />
                         </TimelineContent>
                     </TimelineItem>
                 ))}
