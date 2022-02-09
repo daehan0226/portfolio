@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 
 import { Typography } from '@mui/material';
 import { EmailIconBox, GitHubIconBox, TistoryIconBox } from './common/SocialIcons';
+import { Login } from './common';
 
 const Footer: FC = () => {
     return (
@@ -25,6 +26,9 @@ const Footer: FC = () => {
                 <GitHubIconBox color="secondary" />
                 <EmailIconBox color="secondary" />
                 <TistoryIconBox color="secondary" />
+            </Box>
+            <Box m={2}>
+                <Login />
             </Box>
             <Typography variant="body1" sx={{ color: 'primary.100' }}>
                 {process.env.REACT_APP_COPYRIGHT} {'\u00A9'}
