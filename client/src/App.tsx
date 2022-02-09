@@ -22,7 +22,6 @@ function App() {
     const skillRef = useRef<HTMLDivElement>(null);
 
     function handleScrollClick(target: string) {
-        console.log(target);
         let targetRef = homeRef;
         switch (target) {
             case 'about':
@@ -46,7 +45,6 @@ function App() {
             inline: 'start',
         });
     }
-
     return (
         <ThemeProvider theme={theme}>
             <div className="App" id="top-anchor">
