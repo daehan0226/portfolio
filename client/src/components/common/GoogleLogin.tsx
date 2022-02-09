@@ -9,7 +9,6 @@ const Login: React.FC = () => {
     const [user, setUser] = useState<any>(null);
     useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
-            console.log(user);
             setUser(user);
         });
     }, []);
