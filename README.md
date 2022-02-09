@@ -11,7 +11,7 @@
 * Deploy to a Github page
 
 ## Back
-* AWS Lambda - 블로그 글 크롤링(하루에 한번)
+* AWS Lambda - Python 크롤링 블로그 글 데이터 수집(하루에 한번)
 * AWS ECR - 람다 함수 계층으로 지정할 도커 이미지 저장
 * GITHUB ACTIONS - 자동 배포(테스트 완료)
   * lambda/delopy 브랜치에 푸쉬
