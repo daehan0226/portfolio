@@ -36,7 +36,7 @@ const useGetDocs = <T extends object>({ collectionName, sortOrder = 'desc', sort
             const querySnapshot = await getDocs(q);
             const temp: any[] = [];
             querySnapshot.forEach(doc => {
-                temp.push(doc.data());
+                temp.push({ id: doc.id, ...doc.data() });
             });
             setData([...temp]);
         } catch (e) {
