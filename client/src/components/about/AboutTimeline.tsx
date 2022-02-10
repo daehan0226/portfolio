@@ -90,7 +90,7 @@ export default function AboutTimeline() {
                     timeout: 500,
                 }}
             >
-                <Box>{editTimeline && <AboutTimelineEdit data={editTimeline} open={editModalOpen} />}</Box>
+                <Box>{editTimeline && <AboutTimelineEdit data={editTimeline} open={editModalOpen} close={handleClose} />}</Box>
             </Modal>
         </Timeline>
     );

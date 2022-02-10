@@ -14,6 +14,7 @@ import { Typography } from '@mui/material';
 interface ITimeLineItemEdit {
     data: ITimeLineItem;
     open: boolean;
+    close: () => void;
 }
 const style = {
     position: 'absolute',
@@ -31,7 +32,7 @@ const style = {
 
 const dotColors = ['secondary.50', 'secondary.100', 'secondary.200', 'secondary.300', 'secondary.400', 'secondary.500'];
 
-export default function AboutTimelineEdit({ data, open }: ITimeLineItemEdit) {
+export default function AboutTimelineEdit({ data, open, close }: ITimeLineItemEdit) {
     const [title, setTitle] = useState({ KR: data.title.KR, EN: data.title.EN });
     const [startDate, setStartDate] = React.useState<Date | null>(new Date(data.startDate.seconds * 1000));
     const [endDate, setEndDate] = React.useState<Date | null>(new Date((data.endDate ? data.endDate.seconds : data.startDate.seconds) * 1000));
@@ -106,6 +107,13 @@ export default function AboutTimelineEdit({ data, open }: ITimeLineItemEdit) {
                             inputProps={{ 'aria-label': 'A' }}
                         />
                     ))}
+                </Box>
+                <Box sx={{ display: 'flex' }}>
+                    <Button sx={{ color: 'secondary.500' }}>{data.id ? 'Update' : 'Create'}</Button>
+                    <Button color="error">Delete</Button>
+                    <Button color="inherit" sx={{ marginLeft: 'auto' }} onClick={close}>
+                        Close
+                    </Button>
                 </Box>
             </Box>
         </Fade>
