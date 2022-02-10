@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 
 import { LangMenu } from './common';
-import { LangContext } from '../context/lang';
+import { LangContext } from '../context';
 
 const pages = ['home', 'about', 'project', 'skill', 'blog'];
 

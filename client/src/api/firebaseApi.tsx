@@ -1,5 +1,4 @@
 import firebase from 'firebase/compat/app';
-import { getDatabase, ref } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
 import 'firebase/compat/auth';
 
@@ -13,9 +12,7 @@ const config = {
 };
 
 firebase.initializeApp(config);
-const database = getDatabase(firebase.initializeApp(config));
 export const db = getFirestore();
-export const postsRef = ref(database, 'blog_posts');
 
 export const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
