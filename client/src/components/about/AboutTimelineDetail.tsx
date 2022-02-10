@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -8,11 +9,13 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import { LangContext } from '../../context/lang';
 import { ITimeLineItemDeatail } from '../../models/about';
 import { Box } from '@mui/material';
+import { AuthContext } from '../../context';
 
 export default function AboutTimelineDetail({ title, detail, date }: ITimeLineItemDeatail) {
     const {
         state: { language },
     } = useContext(LangContext);
+    const { state } = useContext(AuthContext);
     return (
         <StyledEngineProvider injectFirst>
             <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded={detail && detail.length > 0}>
@@ -34,6 +37,7 @@ export default function AboutTimelineDetail({ title, detail, date }: ITimeLineIt
                         </Typography>
                         <Typography variant="h6" sx={{ wordBreak: 'break-word' }}>
                             {title[language]}
+                            {state.auth.isAdmin && <ModeEditIcon />}
                         </Typography>
                     </Box>
                 </AccordionSummary>

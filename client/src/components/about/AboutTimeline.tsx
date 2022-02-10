@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -24,6 +24,7 @@ const showDate = (item: ITimeLineItem): string => {
 
 export default function AboutTimeline() {
     const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sortKey: 'startDate' });
+
     return (
         <Timeline sx={{ padding: 0 }}>
             {loading && <LoadingBox />}

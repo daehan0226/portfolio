@@ -1,3 +1,3 @@
-import { compare, convertDateToStr } from './utils';
+import { compare, convertDateToStr } from './helpers';
 
 export { compare, convertDateToStr };
