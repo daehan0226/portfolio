@@ -53,7 +53,7 @@ const Blog = ({ refObject }: RefProps) => {
     }, [data]);
 
     const itemsToShow = useMemo(() => {
-        return categoryPosts.slice(0, numberOfitemsShown).map((post, i) => <BlogCard key={i} post={post} />);
+        return categoryPosts.slice(0, numberOfitemsShown).map(post => <BlogCard key={post.id} post={post} />);
     }, [categoryPosts, numberOfitemsShown]);
 
     return (

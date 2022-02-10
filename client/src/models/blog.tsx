@@ -1,4 +1,5 @@
 export default interface IBlog {
+    id: string;
     title: string;
     category: string;
     image?: {

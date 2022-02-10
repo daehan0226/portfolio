@@ -9,7 +9,7 @@ import { LangContext } from '../../context/lang';
 import { ITimeLineItemDeatail } from '../../models/about';
 import { Box } from '@mui/material';
 
-export default function AboutTimelineDetail({ title, detail, date }: ITimeLineItemDeatail) {
+export default function AboutTimelineDetail({ id, title, detail, date }: ITimeLineItemDeatail) {
     const {
         state: { language },
     } = useContext(LangContext);
