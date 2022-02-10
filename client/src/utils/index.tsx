@@ -1,4 +1,3 @@
-import { compare, convertDateToStr } from './utils';
-import upsertDoc from './upsertDoc';
+import { compare, convertDateToStr } from './helpers';
 
-export { compare, convertDateToStr, upsertDoc };
+export { compare, convertDateToStr };

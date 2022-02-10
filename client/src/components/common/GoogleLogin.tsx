@@ -1,47 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import TextField from '@mui/material/TextField';
+import React, { useEffect, useContext } from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
 import Button from '@mui/material/Button';
+import { AuthContext } from '../../context';
 
 import firebase, { signInWithGoogle, auth } from '../../api/firebaseApi';
+import isAdminUser from '../../api/users';
 
 const Login: React.FC = () => {
-    const [user, setUser] = useState<any>(null);
+    const {
+        state,
+        dispatch: { setAuth, clearAuth },
+    } = useContext(AuthContext);
+
     useEffect(() => {
-        firebase.auth().onAuthStateChanged(user => {
-            setUser(user);
-        });
+        handleLogIn();
     }, []);
+
+    const handleLogIn = () => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                isAdminUser(user.uid).then(res => {
+                    setAuth(res);
+                });
+            }
+        });
+    };
+
+    const handleLogOut = async () => {
+        await auth.signOut();
+        clearAuth();
+    };
+
     return (
-        <div>
-            {/* <TextField
-                label="input"
-                color="secondary"
-                focused
-                value={value}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setValue(e.target.value);
-                }}
-            />
-            <Button
-                variant="outlined"
-                onClick={() => {
-                    upsertDoc({ collectionName: 'Test', newDoc: { value } });
-                    console.log(value);
-                }}
-            >
-                Submit
-            </Button> */}
-            {user ? (
-                <Button variant="outlined" onClick={() => auth.signOut()} startIcon={<GoogleIcon />}>
+        <>
+            {state.auth.loggedIn ? (
+                <Button variant="text" onClick={handleLogOut} startIcon={<GoogleIcon />}>
                     Sign out
                 </Button>
             ) : (
-                <Button variant="outlined" onClick={signInWithGoogle} startIcon={<GoogleIcon />}>
+                <Button variant="text" onClick={signInWithGoogle} startIcon={<GoogleIcon />}>
                     Sign in
                 </Button>
             )}
-        </div>
+        </>
     );
 };
 

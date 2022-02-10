@@ -1,4 +1,5 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -8,11 +9,16 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ITimeLineItem } from '../../models';
 import Typography from '@mui/material/Typography';
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 
 import { AlertMsg, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
 import { convertDateToStr } from '../../utils';
 import AboutTimelineDetail from './AboutTimelineDetail';
+import AboutTimelineEdit from './AboutTimelineEdit';
+import { AuthContext } from '../../context';
 
 const showDate = (item: ITimeLineItem): string => {
     let date: string = convertDateToStr(item.startDate.seconds);
@@ -24,13 +30,32 @@ const showDate = (item: ITimeLineItem): string => {
 
 export default function AboutTimeline() {
     const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sortKey: 'startDate' });
+    const [editKey, setEditKey] = useState<string | null>(null);
+    const [editTimeline, setEditTimeline] = useState<ITimeLineItem | null>(null);
+    const { state } = useContext(AuthContext);
+    const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        setEditTimeline(null);
+        setEditModalOpen(false);
+        if (editKey) {
+            const editData = data.find(item => item.id === editKey);
+            if (editData) {
+                setEditTimeline(editData);
+                setEditModalOpen(true);
+            }
+        }
+    }, [editKey]);
+
+    const handleClose = () => setEditModalOpen(false);
+
     return (
         <Timeline sx={{ padding: 0 }}>
             {loading && <LoadingBox />}
             {error && <AlertMsg msg={error} title="Error" type="error" />}
             {data &&
                 data.map(item => (
-                    <TimelineItem key={item.title.KR}>
+                    <TimelineItem key={item.id}>
                         <TimelineOppositeContent
                             sx={{ flex: 'none', margin: 'auto 0px', visibility: { mobile: 'hidden', tablet: 'visible' }, width: { mobile: '0%', tablet: '20%', labtop: '25%', desktop: '30%' } }}
                         >
@@ -42,10 +67,31 @@ export default function AboutTimeline() {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent sx={{ display: 'flex', padding: '8px 8px', flexDirection: 'column', alignItems: 'left', justifyContent: 'center' }}>
-                            <AboutTimelineDetail title={item.title} detail={item.detail} date={showDate(item)} />
+                            <AboutTimelineDetail id={item.id} title={item.title} detail={item.detail} date={showDate(item)} />
+                            {state.auth.isAdmin && (
+                                <ModeEditIcon
+                                    sx={{ cursor: 'pointer' }}
+                                    onClick={() => {
+                                        setEditKey(item.id);
+                                    }}
+                                />
+                            )}
                         </TimelineContent>
                     </TimelineItem>
                 ))}
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={editModalOpen}
+                onClose={handleClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Box>{editTimeline && <AboutTimelineEdit data={editTimeline} open={editModalOpen} />}</Box>
+            </Modal>
         </Timeline>
     );
 }

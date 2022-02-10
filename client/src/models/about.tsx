@@ -1,4 +1,5 @@
 export interface ITimeLineItemDeatail {
+    id: string;
     title: {
         [lang: string]: string;
     };
