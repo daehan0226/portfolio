@@ -15,7 +15,7 @@ export default function AboutTimelineDetail({ title, detail, date }: ITimeLineIt
     } = useContext(LangContext);
     return (
         <StyledEngineProvider injectFirst>
-            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded>
+            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded={detail && detail.length > 0}>
                 <AccordionSummary
                     expandIcon={detail && <ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -23,7 +23,7 @@ export default function AboutTimelineDetail({ title, detail, date }: ITimeLineIt
                     sx={{
                         flex: 0,
                         justifyContent: 'flex-start',
-                        alignItems: { mobile: 'center', laptop: 'end' },
+                        alignItems: { mobile: 'center' },
                         padding: 0,
                         '& .Mui-expanded': { margin: '0 !important' },
                     }}
