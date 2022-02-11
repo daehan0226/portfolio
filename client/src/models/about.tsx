@@ -1,9 +1,8 @@
 export interface ITimeLineItemDeatail {
-    id: string;
+    id: string | null;
     title: {
         [lang: string]: string;
     };
-    date: string;
     detail: {
         project: {
             [lang: string]: string;

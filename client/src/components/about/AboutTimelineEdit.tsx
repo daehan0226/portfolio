@@ -10,6 +10,7 @@ import { SelectChangeEvent } from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import { ITimeLineItem } from '../../models';
 import { Typography } from '@mui/material';
+import { deleteTimeline } from '../../api/timelines';
 
 interface ITimeLineItemEdit {
     data: ITimeLineItem;
@@ -21,8 +22,6 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
-    minHeight: 400,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -50,6 +49,10 @@ export default function AboutTimelineEdit({ data, open, close }: ITimeLineItemEd
 
     const handleColorChange = (event: SelectChangeEvent) => {
         setDotColor(event.target.value as string);
+    };
+
+    const handleDelete = (id_: string) => {
+        deleteTimeline(id_);
     };
 
     useEffect(() => {
@@ -110,7 +113,11 @@ export default function AboutTimelineEdit({ data, open, close }: ITimeLineItemEd
                 </Box>
                 <Box sx={{ display: 'flex' }}>
                     <Button sx={{ color: 'secondary.500' }}>{data.id ? 'Update' : 'Create'}</Button>
-                    <Button color="error">Delete</Button>
+                    {data.id && (
+                        <Button color="error" onClick={() => data.id && handleDelete(data.id)}>
+                            Delete
+                        </Button>
+                    )}
                     <Button color="inherit" sx={{ marginLeft: 'auto' }} onClick={close}>
                         Close
                     </Button>

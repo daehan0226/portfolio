@@ -20,6 +20,7 @@ const genQuery = ({ sortKey, sortOrder, limitNumber }: IGenQueryProps): QueryCon
     if (limitNumber) {
         queryConditions.push(limit(limitNumber));
     }
+
     return queryConditions;
 };
 
@@ -32,6 +33,7 @@ const useGetDocs = <T extends object>({ collectionName, sortOrder = 'desc', sort
         const col = collection(db, collectionName);
         const q = await query(col, ...genQuery({ sortKey, sortOrder, limitNumber }));
 
+        setError('');
         try {
             const querySnapshot = await getDocs(q);
             const temp: any[] = [];
