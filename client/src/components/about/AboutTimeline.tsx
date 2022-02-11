@@ -47,7 +47,7 @@ export default function AboutTimeline() {
         }
     }, [editKey]);
 
-    const handleClose = () => setEditModalOpen(false);
+    const handleClose = () => setEditKey(null);
 
     return (
         <Timeline sx={{ padding: 0 }}>
@@ -90,7 +90,7 @@ export default function AboutTimeline() {
                     timeout: 500,
                 }}
             >
-                <Box>{editTimeline && <AboutTimelineEdit data={editTimeline} open={editModalOpen} />}</Box>
+                <Box>{editTimeline && <AboutTimelineEdit data={editTimeline} open={editModalOpen} close={handleClose} />}</Box>
             </Modal>
         </Timeline>
     );
