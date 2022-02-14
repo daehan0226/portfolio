@@ -38,7 +38,7 @@
     "furfellasAppName": "Furfellas App - Front, Back API",
     "furfellasAppDesc": "Fur fellas's webapge",
     "furfellasAppFrontFeatureOne": "ReactJS - Typescript, Redux(Auth state), Google Oauth2",
-    "furfellasAppFrontFeatureTwo": "MUI - Component, Styled-component, Responsive UI",
+    "furfellasAppFrontFeatureTwo": "AntDesign - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
     "furfellasAppBackFeatureTwo": "Define multi containers(Flask, MySQL - ORM, Reids, Nginx, Celery) with Docker Compose",
     "furfellasAppBackFeatureThhee": "Test code with Pytest",

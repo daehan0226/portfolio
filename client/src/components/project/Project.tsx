@@ -34,9 +34,9 @@ const Project: FC<RefProps> = ({ refObject }) => {
                 <CustomeDivider />
                 <ProjectPortfolio />
                 <CustomeDivider />
-                <ProjectEnglishApp />
-                <CustomeDivider />
                 <ProjectFurfellasApp />
+                <CustomeDivider />
+                <ProjectEnglishApp />
             </BoxWrapper>
         </div>
     );
