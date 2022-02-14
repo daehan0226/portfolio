@@ -22,8 +22,7 @@ const ProjectEnglishApp: FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                <ProjectImageBox
-                    link={process.env.REACT_APP_PROJECT_ENGLISH_APP_LINK}
+                <ProjectImageBox //{process.env.REACT_APP_PROJECT_ENGLISH_APP_LINK}
                     src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_ENGLISH_APP_IMAGE}`}
                     alt={translate('englihAppName')}
                 />
@@ -31,12 +30,16 @@ const ProjectEnglishApp: FC = () => {
                     <ProjectFeatureBox
                         name={'englishApp'}
                         title={'Front'}
-                        features={[translate('englihAppFrontFeatureOne'), translate('englihAppFrontFeatureTwo'), translate('englihAppFrontFeatureThree'), translate('englihAppFrontFeatureFour')]}
+                        features={[translate('englihAppFrontFeatureOne'), translate('englihAppFrontFeatureTwo'), translate('englihAppFrontFeatureThree')]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_ENGLISH_APP_GITHUB_FRONT}>
                         <GitHubIcon />
                     </Link>
-                    <ProjectFeatureBox name={'englishApp'} title={'Back'} features={[translate('englihAppBackFeatureOne'), translate('englihAppBackFeatureTwo')]} />
+                    <ProjectFeatureBox
+                        name={'englishApp'}
+                        title={'Back'}
+                        features={[translate('englihAppBackFeatureOne'), translate('englihAppBackFeatureTwo'), translate('englihAppBackFeatureThree')]}
+                    />
                     <Link href={process.env.REACT_APP_PROJECT_ENGLISH_APP_GITHUB_BACK}>
                         <GitHubIcon />
                     </Link>

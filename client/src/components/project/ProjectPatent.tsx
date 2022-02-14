@@ -5,7 +5,7 @@ import { Link } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { LangContext } from '../../context/lang';
 
-import { ProjectFeatureBox, ProjectImageBox, ProjectHeader } from './common';
+import { ProjectFeatureBox, ProjectHeader } from './common';
 
 const ProjectPatent: FC = () => {
     const {
@@ -22,13 +22,12 @@ const ProjectPatent: FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                {/* <ProjectImageBox
-                    link={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK}
-                    src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_PORTFOLIO_IMAGE}`}
-                    alt={translate('portfolioName')}
-                /> */}
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
-                    <ProjectFeatureBox name={'patent'} title={'Back'} features={[translate('patentBackFeatureOne'), translate('patentBackFeatureTwo')]} />
+                    <ProjectFeatureBox
+                        name={'patent'}
+                        title={'Back'}
+                        features={[translate('patentBackFeatureOne'), translate('patentBackFeatureTwo'), translate('patentBackFeatureThree'), translate('patentBackFeatureFour')]}
+                    />
                     <Link href={process.env.REACT_APP_PROJECT_PATENT_GITHUB_BACK}>
                         <GitHubIcon />
                     </Link>
