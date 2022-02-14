@@ -26,7 +26,13 @@ const ProjectPatent: FC = () => {
                     <ProjectFeatureBox
                         name={'patent'}
                         title={'Back'}
-                        features={[translate('patentBackFeatureOne'), translate('patentBackFeatureTwo'), translate('patentBackFeatureThree'), translate('patentBackFeatureFour')]}
+                        features={[
+                            translate('patentBackFeatureOne'),
+                            translate('patentBackFeatureTwo'),
+                            translate('patentBackFeatureThree'),
+                            translate('patentBackFeatureFour'),
+                            translate('patentBackFeatureFive'),
+                        ]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_PATENT_GITHUB_BACK}>
                         <GitHubIcon />

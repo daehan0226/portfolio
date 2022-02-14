@@ -16,6 +16,7 @@ const About = ({ refObject }: RefProps) => {
             <BoxWrapper>
                 <BoxHeader title={translate('about')} />
                 <AboutPersonality />
+                <BoxHeader title={translate('workExperience')} />
                 <AboutTimeline />
             </BoxWrapper>
         </div>

@@ -13,15 +13,15 @@ interface IAboutTimelineDetail extends ITimeLineItemDeatail {
     date: string;
 }
 
-export default function AboutTimelineDetail({ id, title, detail, date }: IAboutTimelineDetail) {
+export default function AboutTimelineDetail({ id, title, tasks, date }: IAboutTimelineDetail) {
     const {
         state: { language },
     } = useContext(LangContext);
     return (
         <StyledEngineProvider injectFirst>
-            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded={detail && detail.length > 0}>
+            <Accordion sx={{ backgroundColor: 'primary.100', boxShadow: 'none' }} defaultExpanded>
                 <AccordionSummary
-                    expandIcon={detail && <ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     sx={{
@@ -42,18 +42,11 @@ export default function AboutTimelineDetail({ id, title, detail, date }: IAboutT
                     </Box>
                 </AccordionSummary>
                 <AccordionDetails sx={{ padding: 0, paddingBottom: 1 }}>
-                    {detail &&
-                        detail.map(({ project, tasks }) => (
-                            <div key={project[language]}>
-                                <Typography variant="body1" sx={{ paddingLeft: 1 }}>
-                                    {project[language]}
-                                </Typography>
-                                {tasks.map((task, i) => (
-                                    <Typography key={`${project}-${i}`} variant="body2" sx={{ paddingLeft: 2 }}>
-                                        {task[language]}
-                                    </Typography>
-                                ))}
-                            </div>
+                    {tasks &&
+                        tasks.map((task, i) => (
+                            <Typography key={`${task}-${i}`} variant="body2" sx={{ paddingLeft: 2 }}>
+                                {task[language]}
+                            </Typography>
                         ))}
                 </AccordionDetails>
             </Accordion>
