@@ -38,7 +38,7 @@
     "furfellasAppName": "강아지 사진첩 - 프론트, 백엔드 API 개발",
     "furfellasAppDesc": "강아지 사진, 할일, 프로필 등록",
     "furfellasAppFrontFeatureOne": "ReactJS - 타입스크립트 적용, Redux - 로그인 상태",
-    "furfellasAppFrontFeatureTwo": "MUI - 컴포넌트 적용, Styled-component, 반응형 UI",
+    "furfellasAppFrontFeatureTwo": "AntDesign - 컴포넌트 적용, Styled-component, 반응형 UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
     "furfellasAppBackFeatureTwo": "Docker compose를 통한 개발 환경 관리(Flask, MySQL - ORM, Redis, Nginx, Celery)",
     "furfellasAppBackFeatureThree": "Pytest을 통한 테스트 코드 작성",
