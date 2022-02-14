@@ -1,6 +1,7 @@
 {
     "home": "Home",
     "about": "About",
+    "workExperience": "Work Experience",
     "project": "Projects",
     "skill": "Skill",
     "blog": "Blog",
@@ -17,6 +18,7 @@
     "patentBackFeatureTwo": "NodeJs Express with TypeScript and Set env variables for production, development and test",
     "patentBackFeatureThree": "Continuous Integration - Github actions and Jest",
     "patentBackFeatureFour": "Python Selenium Crawler - Collects Patent data and store",
+    "patentBackFeatureFive": "EC2 - Configure Inbound rules: Open the port for Nginx as Proxy, limit IPs for remote acccess to DB",
     "portfolioName": "Portfolio - Front, Serverless backend",
     "portfolioDesc": "Portfolio Project",
     "portfolioFrontFeatureOne": "ReactJS - Typescript, ContextAPI - Language, Auth",

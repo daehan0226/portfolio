@@ -1,6 +1,7 @@
 {
     "home": "홈",
     "about": "소개",
+    "workExperience": "경력",
     "project": "프로젝트",
     "skill": "스킬",
     "blog": "블로그",
@@ -17,6 +18,7 @@
     "patentBackFeatureTwo": "NodeJs Express - 타입스크립트 적용 및 프로덕션, 개발, 테스트 환경 설정",
     "patentBackFeatureThree": "Jest과 Github actions 을 통한 테스트 자동화",
     "patentBackFeatureFour": "Python Selenium 크롤러 - 특허 데이터 수집 및 저장",
+    "patentBackFeatureFive": "EC2 - 인바운드 설정(Proxy역할 하는 Nginx만 개방, DB는 특정 IP만 접근 가능)",
     "portfolioName": "포트폴리오 - 프론트, 서버리스 백엔드 개발",
     "portfolioDesc": "개인 포트폴리오 프로젝트",
     "portfolioFrontFeatureOne": "ReactJS - 타입스크립트 적용, ContextAPI - 언어, 로그인 상태 저장",

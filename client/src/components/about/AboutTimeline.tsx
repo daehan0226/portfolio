@@ -67,7 +67,7 @@ export default function AboutTimeline() {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent sx={{ display: 'flex', padding: '8px 8px', flexDirection: 'column', alignItems: 'left', justifyContent: 'center' }}>
-                            <AboutTimelineDetail id={item.id} title={item.title} detail={item.detail} date={showDate(item)} />
+                            <AboutTimelineDetail id={item.id} title={item.title} tasks={item.tasks} date={showDate(item)} />
                             {state.auth.isAdmin && (
                                 <ModeEditIcon
                                     sx={{ cursor: 'pointer' }}
