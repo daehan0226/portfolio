@@ -6,14 +6,14 @@
 </p>
 
 ## Client
-* ReactJS + Typescript + MUI + ContextAPI
+* ReactJS + Typescript + MUI + ContextAPI(언어 설정, 로그인 상태 저장)
 * ESLint + Prettier
-* Deploy to a Github page
+* Github Actions을 통한 Github page에 배포 
 
 ## Back
 * AWS Lambda - Python 크롤링 블로그 글 데이터 수집(하루에 한번)
 * AWS ECR - 람다 함수 계층으로 지정할 도커 이미지 저장
-* Google Login - 구글 로그인 연동(모바일에서는 크롬에서 가능) 및 타임라인 수정(관리자만)
+* Google Login - 구글 로그인 연동(모바일에서는 크롬에서 가능) 및 타임라인 수정(관리자 접근 규칙 설정)
 * GITHUB ACTIONS - 자동 배포(테스트 완료)
   * lambda/delopy 브랜치에 푸쉬
     1. lambda 폴더 내의 도커파일로 도커 이미지 빌드
