@@ -32,7 +32,17 @@ const ProjectFurfellasApp: FC = () => {
                     <Link href={process.env.REACT_APP_PROJECT_FURFELLAS_APP_GITHUB_FRONT}>
                         <GitHubIcon />
                     </Link>
-                    <ProjectFeatureBox name={'furfellasApp'} title={'Back'} features={[translate('furfellasAppBackFeatureOne'), translate('furfellasAppBackFeatureTwo')]} />
+                    <ProjectFeatureBox
+                        name={'furfellasApp'}
+                        title={'Back'}
+                        features={[
+                            translate('furfellasAppBackFeatureOne'),
+                            translate('furfellasAppBackFeatureTwo'),
+                            translate('furfellasAppBackFeatureThree'),
+                            translate('furfellasAppBackFeatureFour'),
+                            translate('furfellasAppBackFeatureFive'),
+                        ]}
+                    />
                     <Link href={process.env.REACT_APP_PROJECT_FURFELLAS_APP_GITHUB_BACK}>
                         <GitHubIcon />
                     </Link>

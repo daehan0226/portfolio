@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import { LangContext } from '../../../context/lang';
 
 type ProjectImageBoxProps = {
-    link: string;
+    link?: string;
     src: string;
     alt: string;
 };
@@ -19,12 +19,16 @@ const ProjectImageBox: FC<ProjectImageBoxProps> = ({ link, src, alt }) => {
     } = useContext(LangContext);
     return (
         <Box sx={{ width: { mobile: 200, tablet: 300 } }}>
-            <Link href={link}>
-                <ImageListItem>
-                    <img src={src} alt={alt} loading="lazy" style={{ width: '100%', height: 'auto' }} />
-                    <ImageListItemBar title={translate('goToWebPage')} />
-                </ImageListItem>
-            </Link>
+            {link ? (
+                <Link href={link && link}>
+                    <ImageListItem>
+                        <img src={src} alt={alt} loading="lazy" style={{ width: '100%', height: 'auto' }} />
+                        {link && <ImageListItemBar title={translate('goToWebPage')} />}
+                    </ImageListItem>
+                </Link>
+            ) : (
+                <img src={src} alt={alt} loading="lazy" style={{ width: '100%', height: 'auto' }} />
+            )}
         </Box>
     );
 };
