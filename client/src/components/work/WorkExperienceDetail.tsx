@@ -13,7 +13,7 @@ interface IAboutTimelineDetail extends ITimeLineItemDeatail {
     date: string;
 }
 
-export default function AboutTimelineDetail({ id, title, tasks, date }: IAboutTimelineDetail) {
+export default function WorkExperienceDetail({ id, title, tasks, date }: IAboutTimelineDetail) {
     const {
         state: { language },
     } = useContext(LangContext);

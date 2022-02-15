@@ -31,13 +31,11 @@ const style = {
 
 const dotColors = ['secondary.50', 'secondary.100', 'secondary.200', 'secondary.300', 'secondary.400', 'secondary.500'];
 
-export default function AboutTimelineEdit({ data, open, close }: ITimeLineItemEdit) {
+export default function WorkExperienceEdit({ data, open, close }: ITimeLineItemEdit) {
     const [title, setTitle] = useState({ KR: data.title.KR, EN: data.title.EN });
     const [startDate, setStartDate] = React.useState<Date | null>(new Date(data.startDate.seconds * 1000));
     const [endDate, setEndDate] = React.useState<Date | null>(new Date((data.endDate ? data.endDate.seconds : data.startDate.seconds) * 1000));
     const [dotColor, setDotColor] = React.useState<string>(data.dotColor);
-
-    // const [timeline, setTimeline] = useState<ITimeLineItem>({ ...data });
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
