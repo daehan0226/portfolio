@@ -47,7 +47,7 @@
     "furfellasAppBackFeatureThree": "Pytest을 통한 테스트 코드 작성",
     "furfellasAppBackFeatureFour": "Google Oauth2 - 유저 로그인/회원가입 토큰 검증",
     "furfellasAppBackFeatureFive": "Python Celery - Google drive 이미지 업로드 비동기 작업",
-    "furfellasAppBackFeatureSix": "Database 백업 - Mysqldump, Mysqlsrestore",
+    "furfellasAppBackFeatureSix": "Database 백업 - Mysqldump, Mysqlrestore",
     "Blog": "",
     "blogInfo": "아래 블로그 글 내용 하루에 한번만 업데이트 되기 때문에 실제 글과 다를 수 있습니다."
   }

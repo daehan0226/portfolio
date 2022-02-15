@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Box from '@mui/material/Box';
+import { Link } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 interface ICompany {
@@ -23,20 +24,22 @@ export default function AboutCompanies() {
     return (
         <Box sx={{ width: { mobile: '100%', tablet: 500, laptop: 1000 }, margin: '30px auto' }}>
             {companies.map(company => (
-                <Box key={company.name} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Typography variant="h4" sx={{ width: 200 }} mb={2}>
-                        {company.name}
-                    </Typography>
-                    <Box sx={{ textAlign: 'left', marginLeft: { mobile: 0, tablet: 7, laptop: 15 } }}>
+                <Box key={company.name} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                    <Box sx={{ width: 200 }}>
+                        <Link href={company.homepage} color="primary.800">
+                            <Typography variant="h4">{company.name}</Typography>
+                        </Link>
+                        <Typography variant="body2" sx={{ wordBreak: 'break-word' }}>
+                            ({company.date})
+                        </Typography>
+                    </Box>
+                    <Box sx={{ textAlign: 'left', marginLeft: { mobile: 0, tablet: 7, laptop: 15 }, marginTop: { mobile: 1 } }}>
                         {company.tasks.map(task => (
                             <Typography key={task} variant="body1" sx={{ wordBreak: 'break-word' }}>
                                 {'- '}
                                 {task}
                             </Typography>
                         ))}
-                        <Typography variant="body2" sx={{ wordBreak: 'break-word' }}>
-                            ({company.date})
-                        </Typography>
                     </Box>
                 </Box>
             ))}
