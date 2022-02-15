@@ -33,9 +33,7 @@ export default function AboutTimelineDetail({ id, title, tasks, date }: IAboutTi
                     }}
                 >
                     <Box>
-                        <Typography sx={{ display: { tablet: 'none' } }} variant="body1">
-                            {date}
-                        </Typography>
+                        <Typography variant="body1">{date}</Typography>
                         <Typography variant="h6" sx={{ wordBreak: 'break-word' }}>
                             {title[language]}
                         </Typography>

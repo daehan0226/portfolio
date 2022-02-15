@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { LangMenu } from './common';
 import { LangContext } from '../context';
 
-const pages = ['home', 'about', 'project', 'skill', 'blog'];
+const pages = ['home', 'company', 'project', 'skill', 'blog'];
 
 interface HeaderProps {
     handleScroll: (target: string) => void;

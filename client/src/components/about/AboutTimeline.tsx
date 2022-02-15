@@ -56,11 +56,7 @@ export default function AboutTimeline() {
             {data &&
                 data.map(item => (
                     <TimelineItem key={item.id}>
-                        <TimelineOppositeContent
-                            sx={{ flex: 'none', margin: 'auto 0px', visibility: { mobile: 'hidden', tablet: 'visible' }, width: { mobile: '0%', tablet: '20%', labtop: '25%', desktop: '30%' } }}
-                        >
-                            <Typography variant="body1">{showDate(item)}</Typography>
-                        </TimelineOppositeContent>
+                        <TimelineOppositeContent sx={{ flex: 'none', margin: 'auto 0px', visibility: 'visible', width: '10%' }}></TimelineOppositeContent>
                         <TimelineSeparator>
                             <TimelineConnector />
                             <TimelineDot sx={{ backgroundColor: item.dotColor }} />
