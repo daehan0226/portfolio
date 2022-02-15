@@ -8,7 +8,6 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { ITimeLineItem } from '../../models';
-import Typography from '@mui/material/Typography';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -55,8 +54,8 @@ export default function AboutTimeline() {
             {error && <AlertMsg msg={error} title="Error" type="error" />}
             {data &&
                 data.map(item => (
-                    <TimelineItem key={item.id}>
-                        <TimelineOppositeContent sx={{ flex: 'none', margin: 'auto 0px', visibility: 'visible', width: '10%' }}></TimelineOppositeContent>
+                    <TimelineItem key={item.id} sx={{ width: { mobile: '100%', laptop: '60%' }, margin: { laptop: '0px auto' } }}>
+                        <TimelineOppositeContent sx={{ display: 'none' }}></TimelineOppositeContent>
                         <TimelineSeparator>
                             <TimelineConnector />
                             <TimelineDot sx={{ backgroundColor: item.dotColor }} />
