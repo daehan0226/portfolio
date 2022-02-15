@@ -10,7 +10,7 @@ import { SelectChangeEvent } from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import { ITimeLineItem } from '../../models';
 import { Typography } from '@mui/material';
-import { deleteTimeline } from '../../api/timelines';
+import { deleteWork } from '../../api/work';
 
 interface ITimeLineItemEdit {
     data: ITimeLineItem;
@@ -50,7 +50,7 @@ export default function WorkExperienceEdit({ data, open, close }: ITimeLineItemE
     };
 
     const handleDelete = (id_: string) => {
-        deleteTimeline(id_);
+        deleteWork(id_);
     };
 
     useEffect(() => {
