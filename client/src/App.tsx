@@ -16,7 +16,7 @@ import { ScrollTop } from './ui/scroll';
 
 function App() {
     const homeRef = useRef<HTMLDivElement>(null);
-    const aboutRef = useRef<HTMLDivElement>(null);
+    const workRef = useRef<HTMLDivElement>(null);
     const projectRef = useRef<HTMLDivElement>(null);
     const blogRef = useRef<HTMLDivElement>(null);
     const skillRef = useRef<HTMLDivElement>(null);
@@ -24,8 +24,8 @@ function App() {
     function handleScrollClick(target: string) {
         let targetRef = homeRef;
         switch (target) {
-            case 'about':
-                targetRef = aboutRef;
+            case 'company':
+                targetRef = workRef;
                 break;
             case 'project':
                 targetRef = projectRef;
@@ -52,7 +52,7 @@ function App() {
                 <Divider sx={{ backgroundColor: 'secondary.light', borderBottomWidth: 5 }} />
                 <main>
                     <Home refObject={homeRef} handleScroll={handleScrollClick} />
-                    <About refObject={aboutRef} />
+                    <About refObject={workRef} />
                     <Project refObject={projectRef} />
                     <Skill refObject={skillRef} />
                     <Blog refObject={blogRef} />

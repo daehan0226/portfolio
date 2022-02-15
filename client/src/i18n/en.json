@@ -1,7 +1,8 @@
 {
     "home": "Home",
     "about": "About",
-    "workExperience": "Work Experience",
+    "company": "Work Experience",
+    "workExperience": "Work Experience in details",
     "project": "Projects",
     "skill": "Skill",
     "blog": "Blog",
@@ -12,7 +13,7 @@
     "langEn": "English",
     "About": "",
     "Project": "",
-    "patentName": "Patent Search APP API",
+    "patentName": "Patent Search App API",
     "patentDesc": "Patent Search Service. search granted patents with search keyword advice",
     "patentBackFeatureOne": "Define multi containers(Express, MySQL, MongoDB, Reids and Nginx) with Docker Compose",
     "patentBackFeatureTwo": "NodeJs Express with TypeScript and Set env variables for production, development and test",
@@ -43,9 +44,10 @@
     "furfellasAppFrontFeatureTwo": "AntDesign - Component, Styled-component, Responsive UI",
     "furfellasAppBackFeatureOne": "Python Flask API",
     "furfellasAppBackFeatureTwo": "Define multi containers(Flask, MySQL - ORM, Reids, Nginx, Celery) with Docker Compose",
-    "furfellasAppBackFeatureThhee": "Test code with Pytest",
+    "furfellasAppBackFeatureThree": "Test code with Pytest",
     "furfellasAppBackFeatureFour": "Google Oauth2 - Validate tokens for user login and sign up",
     "furfellasAppBackFeatureFive": "Python Celery - async job for uploading images to Google drive",
+    "furfellasAppBackFeatureSix": "Database backup - Mysqldump, Mysqlsrestore",
     "Blog": "",
     "blogInfo": "It might not be correct since blog posts data is updated once a day." 
 }

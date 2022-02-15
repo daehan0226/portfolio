@@ -41,6 +41,7 @@ const ProjectFurfellasApp: FC = () => {
                             translate('furfellasAppBackFeatureThree'),
                             translate('furfellasAppBackFeatureFour'),
                             translate('furfellasAppBackFeatureFive'),
+                            translate('furfellasAppBackFeatureSix'),
                         ]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_FURFELLAS_APP_GITHUB_BACK}>
