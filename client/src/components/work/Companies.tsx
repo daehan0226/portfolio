@@ -20,7 +20,7 @@ const companies: ICompany[] = [
     },
 ];
 
-export default function AboutCompanies() {
+export default function Companies() {
     return (
         <Box sx={{ width: { mobile: '100%', tablet: 500, laptop: 1000 }, margin: '30px auto' }}>
             {companies.map(company => (

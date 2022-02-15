@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import './App.css';
 import { Header, Footer } from './components';
 import { Home } from './components/home';
-import { About } from './components/about';
+import { Work } from './components/work';
 import { Project } from './components/project';
 import { Skill } from './components/skill';
 import { Blog } from './components/blog';
@@ -52,7 +52,7 @@ function App() {
                 <Divider sx={{ backgroundColor: 'secondary.light', borderBottomWidth: 5 }} />
                 <main>
                     <Home refObject={homeRef} handleScroll={handleScrollClick} />
-                    <About refObject={workRef} />
+                    <Work refObject={workRef} />
                     <Project refObject={projectRef} />
                     <Skill refObject={skillRef} />
                     <Blog refObject={blogRef} />

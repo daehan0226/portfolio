@@ -15,8 +15,8 @@ import Modal from '@mui/material/Modal';
 import { AlertMsg, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
 import { convertDateToStr } from '../../utils';
-import AboutTimelineDetail from './AboutTimelineDetail';
-import AboutTimelineEdit from './AboutTimelineEdit';
+import AboutTimelineDetail from './WorkExperienceDetail';
+import AboutTimelineEdit from './WorkExperienceEdit';
 import { AuthContext } from '../../context';
 
 const showDate = (item: ITimeLineItem): string => {
@@ -27,7 +27,7 @@ const showDate = (item: ITimeLineItem): string => {
     return date;
 };
 
-export default function AboutTimeline() {
+export default function WorkExperienceTimeline() {
     const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sortKey: 'startDate' });
     const [editKey, setEditKey] = useState<string | null>(null);
     const [editTimeline, setEditTimeline] = useState<ITimeLineItem | null>(null);
