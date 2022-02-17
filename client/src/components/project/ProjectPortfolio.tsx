@@ -22,20 +22,16 @@ const ProjectPortfolio: FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                <ProjectImageBox
-                    link={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK}
-                    src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_PORTFOLIO_IMAGE}`}
-                    alt={translate('portfolioName')}
-                />
+                <ProjectImageBox src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_PORTFOLIO_IMAGE}`} alt={translate('portfolioName')} />
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
                     <ProjectFeatureBox
                         name={'portfolio'}
-                        title={'Front'}
+                        title={'Front-end'}
                         features={[translate('portfolioFrontFeatureOne'), translate('portfolioFrontFeatureTwo'), translate('portfolioFrontFeatureThree')]}
                     />
                     <ProjectFeatureBox
                         name={'portfolio'}
-                        title={'Back'}
+                        title={'Back-end'}
                         features={[translate('portfolioBackFeatureOne'), translate('portfolioBackFeatureTwo'), translate('portfolioBackFeatureThree'), translate('portfolioBackFeatureFour')]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_PORTFOLIO_GITHUB}>

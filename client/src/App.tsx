@@ -19,7 +19,6 @@ function App() {
     const homeRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const workRef = useRef<HTMLDivElement>(null);
-    const projectRef = useRef<HTMLDivElement>(null);
     const blogRef = useRef<HTMLDivElement>(null);
     const skillRef = useRef<HTMLDivElement>(null);
 
@@ -31,9 +30,6 @@ function App() {
                 break;
             case 'company':
                 targetRef = workRef;
-                break;
-            case 'project':
-                targetRef = projectRef;
                 break;
             case 'skill':
                 targetRef = skillRef;
@@ -59,7 +55,7 @@ function App() {
                     <Home refObject={homeRef} handleScroll={handleScrollClick} />
                     <About refObject={aboutRef} />
                     <Work refObject={workRef} />
-                    <Project refObject={projectRef} />
+                    <Project />
                     <Skill refObject={skillRef} />
                     <Blog refObject={blogRef} />
                 </main>
