@@ -15,7 +15,7 @@ const Home: FC<RefProps> = ({ refObject, handleScroll }) => {
 
     const handleArrowClick = () => {
         if (handleScroll) {
-            handleScroll('company');
+            handleScroll('about');
         }
     };
 
