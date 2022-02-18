@@ -3,6 +3,7 @@ import React, { RefObject } from 'react';
 import IBlog from './blog';
 import IProject from './project';
 import ITimeLineItem from './about';
+import { IWorkDetailDates, IWorkDetailDateSeconds } from './work';
 
 import { SocialIconBoxProps, IconBoxProps } from './box';
 
@@ -11,4 +12,4 @@ export interface RefProps {
     handleScroll?: (target: string) => void;
 }
 
-export type { IBlog, IProject, ITimeLineItem, SocialIconBoxProps, IconBoxProps };
+export type { IWorkDetailDates, IWorkDetailDateSeconds, IBlog, IProject, ITimeLineItem, SocialIconBoxProps, IconBoxProps };
