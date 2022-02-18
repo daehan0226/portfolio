@@ -57,7 +57,7 @@ const Home: FC<RefProps> = ({ refObject, handleScroll }) => {
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    marginTop: '-60px',
+                    marginTop: '-100px',
                 }}
             >
                 <ArrowIcon up={false} handleClick={handleArrowClick} />
