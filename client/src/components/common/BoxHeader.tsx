@@ -21,6 +21,7 @@ const BoxHeader = ({ title, color = 'primary.700', divierColor = 'primary.700' }
                     backgroundColor: divierColor,
                     borderBottomWidth: { mobile: 2, tablet: 3, laptop: 4 },
                     width: title.length * 20,
+                    maxWidth: '60%',
                     margin: '10px auto',
                     marginBottom: { mobile: 2, tablet: 3, laptop: 4 },
                 }}

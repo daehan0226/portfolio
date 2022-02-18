@@ -28,13 +28,13 @@ const ProjectFurfellasApp: FC = () => {
                     alt={translate('furfellasAppName')}
                 />
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
-                    <ProjectFeatureBox name={'furfellasApp'} title={'Front'} features={[translate('furfellasAppFrontFeatureOne'), translate('furfellasAppFrontFeatureTwo')]} />
+                    <ProjectFeatureBox name={'furfellasApp'} title={'Front-end'} features={[translate('furfellasAppFrontFeatureOne'), translate('furfellasAppFrontFeatureTwo')]} />
                     <Link href={process.env.REACT_APP_PROJECT_FURFELLAS_APP_GITHUB_FRONT}>
                         <GitHubIcon />
                     </Link>
                     <ProjectFeatureBox
                         name={'furfellasApp'}
-                        title={'Back'}
+                        title={'Back-end'}
                         features={[
                             translate('furfellasAppBackFeatureOne'),
                             translate('furfellasAppBackFeatureTwo'),

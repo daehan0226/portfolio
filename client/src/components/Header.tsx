@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { LangMenu } from './common';
 import { LangContext } from '../context';
 
-const pages = ['home', 'company', 'project', 'skill', 'blog'];
+const pages = ['home', 'about', 'company', 'skill', 'blog'];
 
 interface HeaderProps {
     handleScroll: (target: string) => void;
@@ -29,34 +29,37 @@ const Header: FC<HeaderProps> = ({ handleScroll }) => {
                 <Toolbar
                     sx={{
                         backgroundColor: 'primary.800',
-                        height: { mobile: 60, tablet: 70, laptop: 80 },
+                        height: { mobile: 60, laptop: 80 },
                         paddingLeft: { mobile: 0.5, tablet: 1.5 },
                         paddingRight: { mobile: 0.5, tablet: 1.5 },
                     }}
                 >
-                    {pages.map(page => (
-                        <MenuItem
-                            key={page}
-                            onClick={() => handleMenuClick(page)}
-                            sx={{
-                                paddingLeft: { mobile: 1, tablet: 2 },
-                                paddingRight: { mobile: 1, tablet: 2 },
-                            }}
-                        >
-                            <Typography
-                                textAlign="center"
-                                variant="h6"
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                        {pages.map(page => (
+                            <MenuItem
+                                key={page}
+                                onClick={() => handleMenuClick(page)}
                                 sx={{
-                                    color: 'primary.contrastText',
-                                    '&:hover': {
-                                        color: 'primary.500',
-                                    },
+                                    paddingLeft: { mobile: 0.5, tablet: 2 },
+                                    paddingRight: { mobile: 0.5, tablet: 2 },
+                                    minHeight: { mobile: 30, tablet: 48 },
                                 }}
                             >
-                                {translate(page)}
-                            </Typography>
-                        </MenuItem>
-                    ))}
+                                <Typography
+                                    textAlign="center"
+                                    variant="h6"
+                                    sx={{
+                                        color: 'primary.contrastText',
+                                        '&:hover': {
+                                            color: 'primary.500',
+                                        },
+                                    }}
+                                >
+                                    {translate(page)}
+                                </Typography>
+                            </MenuItem>
+                        ))}
+                    </Box>
                     <LangMenu />
                 </Toolbar>
             </AppBar>

@@ -25,7 +25,7 @@ const ProjectPatent: FC = () => {
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
                     <ProjectFeatureBox
                         name={'patent'}
-                        title={'Back'}
+                        title={'Back-end'}
                         features={[
                             translate('patentBackFeatureOne'),
                             translate('patentBackFeatureTwo'),

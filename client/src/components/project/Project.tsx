@@ -1,5 +1,4 @@
 import React, { FC, useContext } from 'react';
-import { RefProps } from '../../models';
 import { BoxWrapper, BoxHeader } from '../common';
 import Divider from '@mui/material/Divider';
 import ProjectPortfolio from './ProjectPortfolio';
@@ -21,24 +20,22 @@ const CustomeDivider = () => {
     );
 };
 
-const Project: FC<RefProps> = ({ refObject }) => {
+const Project: FC = () => {
     const {
         dispatch: { translate },
     } = useContext(LangContext);
 
     return (
-        <div ref={refObject}>
-            <BoxWrapper backgroundColor="primary.800">
-                <BoxHeader title={translate('project')} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
-                <ProjectPatent />
-                <CustomeDivider />
-                <ProjectPortfolio />
-                <CustomeDivider />
-                <ProjectFurfellasApp />
-                <CustomeDivider />
-                <ProjectEnglishApp />
-            </BoxWrapper>
-        </div>
+        <BoxWrapper backgroundColor="primary.800">
+            <BoxHeader title={translate('project')} color={'primary.contrastText'} divierColor={'primary.contrastText'} />
+            <ProjectPatent />
+            <CustomeDivider />
+            <ProjectPortfolio />
+            <CustomeDivider />
+            <ProjectFurfellasApp />
+            <CustomeDivider />
+            <ProjectEnglishApp />
+        </BoxWrapper>
     );
 };
 export default Project;

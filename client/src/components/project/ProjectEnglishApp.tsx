@@ -29,7 +29,7 @@ const ProjectEnglishApp: FC = () => {
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
                     <ProjectFeatureBox
                         name={'englishApp'}
-                        title={'Front'}
+                        title={'Front-end'}
                         features={[translate('englihAppFrontFeatureOne'), translate('englihAppFrontFeatureTwo'), translate('englihAppFrontFeatureThree')]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_ENGLISH_APP_GITHUB_FRONT}>
@@ -37,7 +37,7 @@ const ProjectEnglishApp: FC = () => {
                     </Link>
                     <ProjectFeatureBox
                         name={'englishApp'}
-                        title={'Back'}
+                        title={'Back-end'}
                         features={[translate('englihAppBackFeatureOne'), translate('englihAppBackFeatureTwo'), translate('englihAppBackFeatureThree')]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_ENGLISH_APP_GITHUB_BACK}>
