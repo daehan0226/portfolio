@@ -61,11 +61,11 @@ const Blog = ({ refObject }: RefProps) => {
             <BoxWrapper>
                 <BoxHeader title={translate('blog')} />
                 <Box>
+                    <AlertMsg msg={translate('blogInfo')} title="" type="info" />
                     {loading && <LoadingBox />}
                     {error && <AlertMsg msg={error} title="Error" type="error" />}
                 </Box>
                 <Box>
-                    <AlertMsg msg={translate('blogInfo')} title="" type="info" />
                     <Chip
                         size="small"
                         label="All"

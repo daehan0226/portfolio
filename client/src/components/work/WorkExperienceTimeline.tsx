@@ -11,7 +11,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 
-import { ITimeLineItem } from '../../models';
+import { IWorkDetailDateSeconds } from '../../models';
 import { AlertMsg, LoadingBox } from '../common';
 import useGetDocs from '../../hooks/useGetDocs';
 import { convertDateToStr } from '../../utils';
@@ -19,7 +19,7 @@ import WorkExperienceDetail from './WorkExperienceDetail';
 import WorkExperienceEdit from './WorkExperienceEdit';
 import { AuthContext } from '../../context';
 
-const showDate = (item: ITimeLineItem): string => {
+const showDate = (item: IWorkDetailDateSeconds): string => {
     let date: string = convertDateToStr(item.startDate.seconds);
     if (item.endDate && item.endDate.seconds !== item.startDate.seconds) {
         date += ` ~ ${convertDateToStr(item.endDate.seconds)}`;
@@ -27,26 +27,26 @@ const showDate = (item: ITimeLineItem): string => {
     return date;
 };
 
-const initialTimeline: ITimeLineItem = {
-    id: null,
+const currentTime = new Date().getTime() / 1000;
+const initialWorkExperience: IWorkDetailDateSeconds = {
     title: {
         KR: '',
         EN: '',
     },
-    dotColor: 'primary.400',
     startDate: {
-        seconds: new Date().getTime() / 1000,
+        seconds: currentTime,
     },
     endDate: {
-        seconds: new Date().getTime() / 1000,
+        seconds: currentTime,
     },
-    tasks: [{ KR: '', EN: '' }],
+    tasks: [{ id: 0, KR: '', EN: '' }],
+    hasDeleted: false,
 };
 
 export default function WorkExperienceTimeline() {
-    const { data, loading, error } = useGetDocs<ITimeLineItem>({ collectionName: 'timeline', sortKey: 'startDate' });
+    const { data, loading, error } = useGetDocs<IWorkDetailDateSeconds>({ collectionName: 'work', sortKey: 'startDate', deletable: true });
     const [editKey, setEditKey] = useState<string | null>(null);
-    const [editTimeline, setEditTimeline] = useState<ITimeLineItem | null>(null);
+    const [editTimeline, setEditTimeline] = useState<IWorkDetailDateSeconds | null>(null);
     const { state } = useContext(AuthContext);
     const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
 
@@ -56,7 +56,7 @@ export default function WorkExperienceTimeline() {
         if (editKey) {
             let editData;
             if (editKey === 'new') {
-                editData = { ...initialTimeline };
+                editData = { ...initialWorkExperience };
             } else {
                 editData = data.find(item => item.id === editKey);
             }
@@ -71,15 +71,17 @@ export default function WorkExperienceTimeline() {
 
     return (
         <>
-            {state.auth.isAdmin && (
-                <ModeEditIcon
-                    sx={{ cursor: 'pointer', textAlign: 'center' }}
-                    onClick={() => {
-                        setEditKey('new');
-                    }}
-                />
-            )}
             <Timeline sx={{ padding: 0 }}>
+                <Box sx={{ textAlign: 'right' }}>
+                    {state.auth.isAdmin && (
+                        <ModeEditIcon
+                            sx={{ cursor: 'pointer' }}
+                            onClick={() => {
+                                setEditKey('new');
+                            }}
+                        />
+                    )}
+                </Box>
                 {loading && <LoadingBox />}
                 {error && <AlertMsg msg={error} title="Error" type="error" />}
                 {data &&
@@ -88,18 +90,22 @@ export default function WorkExperienceTimeline() {
                             <TimelineOppositeContent sx={{ display: 'none' }}></TimelineOppositeContent>
                             <TimelineSeparator>
                                 <TimelineConnector />
-                                <TimelineDot sx={{ backgroundColor: item.dotColor }} />
+                                <TimelineDot sx={{ backgroundColor: 'secondary.400' }} />
                                 <TimelineConnector />
                             </TimelineSeparator>
                             <TimelineContent sx={{ display: 'flex', padding: '8px 8px', flexDirection: 'column', alignItems: 'left', justifyContent: 'center' }}>
-                                <WorkExperienceDetail id={item.id} title={item.title} tasks={item.tasks} date={showDate(item)} />
-                                {state.auth.isAdmin && (
-                                    <ModeEditIcon
-                                        sx={{ cursor: 'pointer' }}
-                                        onClick={() => {
-                                            setEditKey(item.id);
-                                        }}
-                                    />
+                                {item.id && (
+                                    <>
+                                        <WorkExperienceDetail id={item.id} title={item.title} tasks={item.tasks} date={showDate(item)} />
+                                        {state.auth.isAdmin && (
+                                            <ModeEditIcon
+                                                sx={{ cursor: 'pointer' }}
+                                                onClick={() => {
+                                                    item.id && setEditKey(item.id);
+                                                }}
+                                            />
+                                        )}
+                                    </>
                                 )}
                             </TimelineContent>
                         </TimelineItem>

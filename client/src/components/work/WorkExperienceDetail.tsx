@@ -43,7 +43,7 @@ export default function WorkExperienceDetail({ id, title, tasks, date }: IAboutT
                     {tasks &&
                         tasks.map((task, i) => (
                             <Typography key={`${task}-${i}`} variant="body2" sx={{ paddingLeft: 2 }}>
-                                {task[language]}
+                                {language === 'KR' ? task['KR'] : task['EN']}
                             </Typography>
                         ))}
                 </AccordionDetails>
