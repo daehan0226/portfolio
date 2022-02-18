@@ -5,7 +5,7 @@ export interface IDateSeconds {
     endDate?: {
         seconds: number;
     };
-    updatedDate?: {
+    updatedDate: {
         seconds: number;
     };
 }

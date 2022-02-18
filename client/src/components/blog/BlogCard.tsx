@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Chip from '@mui/material/Chip';
@@ -8,12 +8,16 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import { convertDateToStr } from '../../utils';
 import { IBlog } from '../../models';
+import { LangContext } from '../../context/lang';
 
 export interface BlogCardProps {
     post: IBlog;
 }
 
 const BlogCard: FC<BlogCardProps> = ({ post }) => {
+    const {
+        state: { language },
+    } = useContext(LangContext);
     return (
         <Card sx={{ width: { mobile: '100%', tablet: 360 }, height: 250, display: 'flex', flexDirection: 'column' }}>
             <CardContent>
@@ -35,7 +39,7 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
                     {post.title}
                 </Typography>
                 <Typography variant="body2" color="secondary.100" sx={{ textAlign: 'right' }}>
-                    {convertDateToStr(post.date.seconds)}
+                    {convertDateToStr(post.date.seconds, language)}
                 </Typography>
                 <Typography
                     variant="body1"

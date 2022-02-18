@@ -120,10 +120,6 @@ export default function WorkExperienceEdit({ data, open, close }: IWorkExperienc
     };
 
     useEffect(() => {
-        console.log(title, startDate, endDate, tasks);
-    }, [title, startDate, endDate, tasks]);
-
-    useEffect(() => {
         setSubmitDisabled(true);
         if (!title.EN || !title.KR) {
             return;
