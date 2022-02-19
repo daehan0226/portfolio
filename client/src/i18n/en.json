@@ -22,7 +22,7 @@
     "patentBackFeatureOne": "Define multi containers(Express, MySQL, MongoDB, Reids and Nginx) with Docker Compose",
     "patentBackFeatureTwo": "NodeJs Express with TypeScript and Set env variables for production, development and test",
     "patentBackFeatureThree": "Continuous Integration - Github Actions and Jest",
-    "patentBackFeatureFour": "MySQL-Sequelize, MongoDB-Mongoose 적용",
+    "patentBackFeatureFour": "MySQL-Sequelize, MongoDB-Mongoose",
     "patentBackFeatureFive": "Python Selenium Crawler - Collects Patent data and store",
     "patentBackFeatureSix": "EC2 - Configure Inbound rules: Open the port for Nginx as Proxy, limit IPs for remote acccess to DB",
     "portfolioName": "Portfolio - Front-end, Serverless Back-end",
