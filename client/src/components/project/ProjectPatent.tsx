@@ -32,6 +32,7 @@ const ProjectPatent: FC = () => {
                             translate('patentBackFeatureThree'),
                             translate('patentBackFeatureFour'),
                             translate('patentBackFeatureFive'),
+                            translate('patentBackFeatureSix'),
                         ]}
                     />
                     <Link href={process.env.REACT_APP_PROJECT_PATENT_GITHUB_BACK}>
