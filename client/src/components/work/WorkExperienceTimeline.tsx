@@ -48,7 +48,7 @@ const initialWorkExperience: IWorkDetailDateSeconds = {
 export default function WorkExperienceTimeline() {
     const { data, loading, error } = useGetDocs<IWorkDetailDateSeconds>({ collectionName: 'work', sortKey: 'startDate', deletable: true });
     const [editKey, setEditKey] = useState<string | null>(null);
-    const [latestUpdatedDate, setLatestUpdatedDate] = useState<string | null>(null);
+    const [latestUpdatedDate, setLatestUpdatedDate] = useState<number | null>(null);
     const [editTimeline, setEditTimeline] = useState<IWorkDetailDateSeconds | null>(null);
     const {
         state: { auth },
@@ -76,6 +76,13 @@ export default function WorkExperienceTimeline() {
         }
     }, [editKey]);
 
+    useEffect(() => {
+        setLatestUpdatedDate(null);
+        if (data.length > 0) {
+            setLatestUpdatedDate(data.reduce((a, b) => (a.updatedDate.seconds > b.updatedDate.seconds ? a : b)).updatedDate.seconds);
+        }
+    }, [data]);
+
     const handleClose = () => setEditKey(null);
 
     return (
@@ -94,9 +101,9 @@ export default function WorkExperienceTimeline() {
                 {loading && <LoadingBox />}
                 {error && <AlertMsg msg={error} title="Error" type="error" />}
                 <Box sx={{ textAlign: 'right' }}>
-                    {data && data.length > 0 && (
+                    {latestUpdatedDate && (
                         <Typography variant="body1">
-                            {translate('updatedAt')}: {convertDateToStr(data.reduce((a, b) => (a.updatedDate.seconds > b.updatedDate.seconds ? a : b)).updatedDate.seconds, language)}
+                            {translate('updatedAt')}: {convertDateToStr(latestUpdatedDate, language)}
                         </Typography>
                     )}
                     {data &&
