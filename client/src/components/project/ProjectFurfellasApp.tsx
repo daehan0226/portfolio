@@ -13,7 +13,7 @@ const ProjectFurfellasApp: FC = () => {
     } = useContext(LangContext);
     return (
         <Box>
-            <ProjectHeader href={process.env.REACT_APP_PROJECT_FURFELLAS_LINK} title={translate('furfellasAppName')} />
+            <ProjectHeader href="" title={translate('furfellasAppName')} />
             <Box
                 sx={{
                     display: 'flex',
@@ -22,11 +22,7 @@ const ProjectFurfellasApp: FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                <ProjectImageBox
-                    link={process.env.REACT_APP_PROJECT_FURFELLAS_LINK}
-                    src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_FURFELLAS_APP_IMAGE}`}
-                    alt={translate('furfellasAppName')}
-                />
+                <ProjectImageBox link={''} src={`${process.env.PUBLIC_URL}/images/${process.env.REACT_APP_PROJECT_FURFELLAS_APP_IMAGE}`} alt={translate('furfellasAppName')} />
                 <Box sx={{ padding: { mobile: 1, tablet: 2 } }}>
                     <ProjectFeatureBox name={'furfellasApp'} title={'Front-end'} features={[translate('furfellasAppFrontFeatureOne'), translate('furfellasAppFrontFeatureTwo')]} />
                     <Link href={process.env.REACT_APP_PROJECT_FURFELLAS_APP_GITHUB_FRONT}>

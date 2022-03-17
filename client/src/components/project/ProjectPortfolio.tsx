@@ -13,7 +13,7 @@ const ProjectPortfolio: FC = () => {
     } = useContext(LangContext);
     return (
         <Box>
-            <ProjectHeader href={process.env.REACT_APP_PROJECT_PORTFOLIO_LINK} title={translate('portfolioName')} />
+            <ProjectHeader href={''} title={translate('portfolioName')} />
             <Box
                 sx={{
                     display: 'flex',

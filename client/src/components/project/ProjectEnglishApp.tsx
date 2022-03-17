@@ -13,7 +13,7 @@ const ProjectEnglishApp: FC = () => {
     } = useContext(LangContext);
     return (
         <Box>
-            <ProjectHeader href={process.env.REACT_APP_PROJECT_ENGLISH_APP_LINK} title={translate('englihAppName')} />
+            <ProjectHeader href={''} title={translate('englihAppName')} />
             <Box
                 sx={{
                     display: 'flex',
