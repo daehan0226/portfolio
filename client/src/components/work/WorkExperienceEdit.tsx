@@ -105,6 +105,7 @@ export default function WorkExperienceEdit({ data, open, close }: IWorkExperienc
             startDate: startDateSeconds,
             endDate: endDateSeconds,
             updatedDate,
+            hasDeleted: false,
         };
         if (data.id) {
             if (window.confirm(`Do you want to Update ${title.EN} Work Experience?`)) {
