@@ -26,7 +26,7 @@ def handler(event, context):
         blog_posts_pages = blog_parser.get_item_list(elements["paging_anchors"])
         for page in blog_posts_pages:
             if pagePrama := page.get("href"):
-                max_page_number = pagePrama.replace("?page=", "")
+                max_page_number = pagePrama.replace("/?page=", "")
 
         # store post elements
         post_elements = []
@@ -44,6 +44,6 @@ def handler(event, context):
 
         logger.info(f"parsed post : {len(post_elements)}")
     except Exception as e:
-        logger.error(f"error : {e.__str__}")
+        logger.error(f"error : {e.__str__()}")
 
     return {"statusCode": 200, "body": json.dumps({"count": len(post_elements)})}
